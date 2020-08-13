@@ -1,0 +1,10 @@
+{% extends 'layout.html.jinja2' %}
+
+{% set title = 'Categories' %}
+
+{% block content %}
+    {% for slug, category in categories %}
+       <h1><a href="{{ url_for('app.category', slug=slug) }}">{{ category.get('name') }}</a></h1>
+        <hr>
+    {% endfor %}
+{% endblock %}

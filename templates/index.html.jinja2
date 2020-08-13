@@ -1,0 +1,47 @@
+{% extends 'layout.html.jinja2' %}
+
+{% block content %}
+    <div class="posts">
+        {% for name, post in posts %}
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title">
+                        <a href="{{ url_for('app.view_post', cat=post.get('category'), post=name) }}"
+                           class="highlight">{{ post.get('title') }}</a>
+                    </h2>
+
+                    <p class="post-meta">
+                        By <a class="post-author" href="https://mayahi.net">Ahmad Mayahi</a> under <span
+                            class="post-category post-category-{{ post.get('category') }}">{{ categories[post.get('category')].get('name') }}</span>
+                        on {{ post.get('published_at') }}
+                    </p>
+                </header>
+
+                <div class="post-description">
+                    {{ post.get('description') }}
+                </div>
+            </section>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{#{% block content %}#}
+{#    <div class="posts">#}
+{#        {% for name, post in posts %}#}
+{#            <div class="card">#}
+{#                <div class="card-body">#}
+{#                    <p class="small">{{ post.get('published_at') }} <span#}
+{#                            class="badge badge-warning">{{ categories[post.get('category')].get('name') }}</span></p>#}
+{#                    <h1 class="card-title">#}
+{#                        <a href="{{ url_for('app.view_post', cat=post.get('category'), post=name) }}"#}
+{#                           class="highlight">{{ post.get('title') }}</a>#}
+{#                    </h1>#}
+{#                    <p class="card-text">{{ post.get('description') }}</p>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="mt-4"></div>#}
+{##}
+{#        {% endfor %}#}
+{#    </div>#}
+{#{% endblock %}#}

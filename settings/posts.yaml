@@ -1,0 +1,90 @@
+how-to-backup-docker-swarm:
+  title: "How to Backup Docker Swarm"
+  description: "Learn how to backup your Docker swarm."
+  category: "docker"
+  published_at: "29 May, 2018"
+
+how-docker-works:
+    title: "How Docker works"
+    description: "Learn how Docker works internally"
+    category: "docker"
+    published_at: "18 June, 2018"
+
+all-about-strings-in-python3:
+    title: "All about strings in Python3"
+    description: "Python string methods explained"
+    category: "python"
+    published_at: "14 April, 2019"
+
+immutable-vs-mutable-objects-in-python:
+  title: "Immutable vs Mutable Objects in Python"
+  description: "Make your queries run faster by calling them statically."
+  category: "python"
+  published_at: "17 April, 2019"
+
+it-is-complicated:
+  title: "It's complicated"
+  description: ""
+  category: "software-development"
+  published_at: "7 June, 2019"
+
+queues-in-laravel-building-a-video-downloader-website:
+  title: "Queues in Laravel: Building a video downloader website"
+  description: "Learn how to use queus to build up a video downloader website using the youtube-dl library."
+  category: "laravel"
+  published_at: "6 March, 2020"
+
+jwt-with-laravel:
+  title: "JWT with Laravel"
+  description: "Learn how to generate JWT without any composer libraires in Laravel."
+  category: "laravel"
+  published_at: "17 March, 2020"
+
+parsing-csv-in-php-the-easiest-way:
+  title: "Parsing CSV in PHP, the easiest way"
+  description: "Learn how to parse CSV files in a very easy way."
+  category: "php"
+  published_at: "17 March, 2020"
+
+late-static-binding-explained:
+  title: "Late Static Binding Explained"
+  description: "What static keyword means in PHP?"
+  category: "php"
+  published_at: "25 March, 2020"
+
+inspecting-filesystem-using-spl:
+  title: "Inspecting Filesystem Using SPL"
+  description: "Learn how to use the SPL library to iterate over the filesystem"
+  category: "php"
+  published_at: "31 March, 2020"
+
+building-infinite-unordered-html-list-using-spl:
+  title: "Building infinite unordered HTML list using SPL"
+  description: "I will be showing you how to build up nested list using SPL."
+  category: "php"
+  published_at: "25 April, 2020"
+
+deploying-python-web-applications:
+  title: "Deploying Python web applications"
+  description: "Learn how to deploy a Python web application using Gunicorn and NGINX"
+  category: "python"
+  published_at: "18 July, 2020"
+
+introduction-to-elasticsearch:
+  title: "Introduction to Elasticsearch"
+  description: "Learn the basic of Elasticsearch"
+  category: "elasticsearch"
+  published_at: "22 July, 2020"
+
+doubly-linked-list-stacks-and-queues-in-php:
+  title: "Doubly-Linked List, Stacks and Queues in PHP"
+  description: "Learn how to use the"
+  category: "php"
+  published_at: "05 August, 2020"
+
+InfniteIterator-explained:
+  title: "InfniteIterator Explained"
+  description: "Learn the basic of Elasticsearch"
+  category: "php"
+  published_at: "07 August, 2020"
+  draft: True

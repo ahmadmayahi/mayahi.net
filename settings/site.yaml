@@ -1,0 +1,17 @@
+title: "Mayahi - Web Development Blog"
+url: "mayahi.net"
+meta:
+  description: "Web Development Easy Explained"
+  keywords: "php, laravel, symfony, python, flask, django, web development, docker"
+  author: "Ahmad Mayahi"
+social:
+  github: 'ahmadmayahi'
+  linkedin: 'ahmadmayahi'
+  twitter: 'ahmadmayahi'
+github_repository: 'https://github.com/ahmadmayahi/mayahi.net'
+contact_jotform_id: '201892949858375'
+google_analytics_id: "UA-120739668-1"
+external_styles:
+  - "https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+  - "https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css"
+  - "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/monokai-sublime.min.css"

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
+    <title>Blog &ndash; Layout Examples &ndash; Pure</title>
+
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="{{ url_for('static', filename='img/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="{{ url_for('static', filename='img/favicons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='img/favicons/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='img/favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    {% block meta_tags %}{% endblock %}
+
+    {% block stylesheets %}{% endblock %}
+
+    {% block javascript %}{% endblock %}
+
+    <title>{{ site.get('title') }} - {{ title }}</title>
+
+    <style>
+        {{ style }}
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.get('google_analytics_id') }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', '{{ site.get('google_analytics_id') }}');
+    </script>
+
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/43b384606ad56feccdab8a5ef/2feef4fdbbd7813d7c898face.js");</script>
+</head>
+<body>
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+            <h1 class="brand-title"><a href="{{ url_for('app.home') }}">Ahmad Mayahi</a></h1>
+            <h2 class="brand-tagline">Web Development Blog</h2>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="pure-button" href="{{ url_for('app.about') }}">About</a>&nbsp;
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="https://mayahi.us10.list-manage.com/subscribe/post?u=43b384606ad56feccdab8a5ef&amp;id=ecbe89252a" target="_blank">Subscribe</a>&nbsp;
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="https://form.jotform.com/201892949858375" target="_blank">Contact</a>&nbsp;
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+
+            {% block content %}{% endblock %}
+
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal">
+                    <ul>
+                        <li class="pure-menu-item"><a href="http://purecss.io/" class="pure-menu-link">About</a></li>
+                        <li class="pure-menu-item"><a href="http://twitter.com/yuilibrary/" class="pure-menu-link">Twitter</a>
+                        </li>
+                        <li class="pure-menu-item"><a href="http://github.com/pure-css/pure/" class="pure-menu-link">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

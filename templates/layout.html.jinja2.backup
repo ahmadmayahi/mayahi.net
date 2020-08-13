@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="{{ url_for('static', filename='img/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="{{ url_for('static', filename='img/favicons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='img/favicons/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='img/favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    {% block meta_tags %}{% endblock %}
+
+    {% block stylesheets %}{% endblock %}
+
+    <title>{{ site.get('title') }} - {{ title }}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?_hash={{ style_hash }}">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.get('google_analytics_id') }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', '{{ site.get('google_analytics_id') }}');
+    </script>
+
+</head>
+<body>
+
+{% include 'header.html.jinja2' %}
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+{% include 'footer.html.jinja2' %}
+
+</body>
+</html>

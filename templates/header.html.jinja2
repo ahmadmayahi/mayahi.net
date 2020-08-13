@@ -1,0 +1,32 @@
+<header class="wrapper">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+            <a href="{{ url_for('app.home') }}"><img src="{{ url_for('static', filename='img/logo-small.png') }}" alt="Ahmad Mayahi"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('app.about') }}">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" target="_blank" href="https://form.jotform.com/{{ site.get('contact_jotform_id') }}">Contact</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('app.subscribe') }}">Subscribe</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+      <a target="_blank" href="https://twitter.com/{{ site.get('social').get('twitter') }}">
+          <img src="{{ url_for('static', filename='img/twitter.png') }}"></a>&nbsp;
+      <a target="_blank" href="https://www.linkedin.com/in/{{ site.get('social').get('linkedin') }}/">
+          <img src="{{ url_for('static', filename='img/linkedin.png') }}"></a>&nbsp;
+      <a target="_blank" href="https://github.com/{{ site.get('social').get('github') }}">
+          <img src="{{ url_for('static', filename='img/github.png') }}"></a>
+    </span>
+            </div>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,60 @@
+{% extends 'layout.html.jinja2' %}
+
+{% block meta_tags %}
+    <meta name="" content="article">
+    <meta name="title" content="{{ title }}">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="description" content="{{ meta.get('description') }}">
+    <meta name="twitter:description" content="{{ meta.get('description') }}">
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:creator" content="@{{ site.get('social').get('twitter') }}"/>
+
+    <meta itemprop="name" content="{{ title }}">
+    <meta itemprop="description" content="{{ meta.get('description') }}">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ meta.get('description') }}">
+
+    <meta property="twitter:image" content="{{ url_for('static', filename='img/meta.png') }}"/>
+{% endblock %}
+
+{% set style_hash = style_hash %}
+
+{% block javascript %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <article class="post">
+            <div class="alert">
+                Enjoy reading? Consider <a href="{{ url_for('app.subscribe') }}">subscribing</a>
+            </div>
+
+            <aside>
+                « <a href="{{ url_for('app.home') }}">Back</a> - written by <a href="https://mayahi.net">Ahmad Mayahi</a> on
+                {{ meta.get('published_at') }} published under <span class="post-category post-category-{{ meta.get('category') }}">{{ category.get('name') }}</span>
+            </aside>
+
+            <h1>{{ meta.get('title') }}</h1>
+            <hr>
+
+            <div class="post-content">
+                {{ post }}
+            </div>
+
+            <div class="alert alert-info">Would you like improving this post?
+                <a target="_blank" href="{{ site.get('github_repository') }}/blob/master/content">Edit on Github</a></div>
+
+            {% include 'comments.html.jinja2' %}
+    </article>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+
+{% endblock %}

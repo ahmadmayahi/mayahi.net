@@ -1,0 +1,24 @@
+php:
+  name: "PHP"
+  description: "Everything about Python"
+
+laravel:
+  name: "Laravel"
+  description: "Everything about Python"
+
+python:
+  name: "Python"
+  description: "Everything about Python"
+
+docker:
+  name: "Docker"
+  description: "Everything about Docker"
+
+software-development:
+  name: "Software Development"
+  description: "Everything about Docker"
+
+elasticsearch:
+  name: "Elasticsearch"
+  description: "Everything about Docker"
+
