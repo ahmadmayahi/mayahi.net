@@ -78,7 +78,7 @@ introduction-to-elasticsearch:
 
 doubly-linked-list-stacks-and-queues-in-php:
   title: "Doubly-Linked List, Stacks and Queues in PHP"
-  description: "Learn how to use the"
+  description: "Learn how to use the doubly-linked-lists, stacks, and queue data structure in PHP"
   category: "php"
   published_at: "05 August, 2020"
 
