@@ -70,13 +70,13 @@
             {% block content %}{% endblock %}
 
             <div class="footer">
+                <p>This blog runs Python Flask, the source can be found on <a href="https://github.com/ahmadmayahi/mayahi.net">github</a></p>
                 <div class="pure-menu pure-menu-horizontal">
                     <ul>
-                        <li class="pure-menu-item"><a href="http://purecss.io/" class="pure-menu-link">About</a></li>
-                        <li class="pure-menu-item"><a href="http://twitter.com/yuilibrary/" class="pure-menu-link">Twitter</a>
-                        </li>
-                        <li class="pure-menu-item"><a href="http://github.com/pure-css/pure/" class="pure-menu-link">GitHub</a>
-                        </li>
+                        <li class="pure-menu-item"><a href="{{ url_for('app.about') }}" class="pure-menu-link">About</a></li>
+                        <li class="pure-menu-item"><a target="_blank" href="https://twitter.com/ahmadmayahi" class="pure-menu-link">Twitter</a></li>
+                        <li class="pure-menu-item"><a target="_blank" href="https://github.com/ahmadmayahi" class="pure-menu-link">GitHub</a></li>
+                        <li class="pure-menu-item"><a target="_blank" href="https://www.linkedin.com/in/ahmadmayahi/" class="pure-menu-link">Linkedin</a></li>
                     </ul>
                 </div>
             </div>

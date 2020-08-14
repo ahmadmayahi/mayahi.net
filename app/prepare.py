@@ -4,8 +4,6 @@ import sys
 from collections import OrderedDict
 from datetime import datetime
 
-import htmlmin
-import urllib3
 
 import app.helpers as helpers
 from flask import render_template, url_for
