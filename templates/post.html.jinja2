@@ -27,10 +27,6 @@
 
 {% block content %}
     <article class="post">
-            <div class="alert">
-                Enjoy reading? Consider <a href="{{ url_for('app.subscribe') }}">subscribing</a>
-            </div>
-
             <aside>
                 « <a href="{{ url_for('app.home') }}">Back</a> - written by <a href="https://mayahi.net">Ahmad Mayahi</a> on
                 {{ meta.get('published_at') }} published under <span class="post-category post-category-{{ meta.get('category') }}">{{ category.get('name') }}</span>
