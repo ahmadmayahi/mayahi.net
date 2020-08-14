@@ -81,10 +81,3 @@ doubly-linked-list-stacks-and-queues-in-php:
   description: "Learn how to use the doubly-linked-lists, stacks, and queue data structure in PHP"
   category: "php"
   published_at: "05 August, 2020"
-
-InfniteIterator-explained:
-  title: "InfniteIterator Explained"
-  description: "Learn the basic of Elasticsearch"
-  category: "php"
-  published_at: "07 August, 2020"
-  draft: True

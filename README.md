@@ -2,8 +2,10 @@
 
 A minimalistic markdown blog written in Python Flask.
 
+This blog is especially created for developers who like to run their markdown blog. 
+
 Features:
-* Very lightweight and fast.
+* Very lightweight and fast mark.
 * YAML based configurations.
 * Supports checksum, so, it doesn't convert the posts if no changes were made.
 * Supports markdown fenced-code and tables.
@@ -12,6 +14,7 @@ Features:
 * No external styling.
 * Minification.
 * Supports highlightjs.
+* Support drafts.
  
 ## Folder structure
 * `content/posts`: All the markdown posts has to be placed within this folder (nested folder supported as well).
