@@ -34,11 +34,14 @@
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
         gtag('config', '{{ site.get('google_analytics_id') }}');
     </script>
 
-    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/43b384606ad56feccdab8a5ef/2feef4fdbbd7813d7c898face.js");</script>
+    <script id="mcjs">!function (c, h, i, m, p) {
+        m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
+    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/43b384606ad56feccdab8a5ef/2feef4fdbbd7813d7c898face.js");</script>
 </head>
 <body>
 
@@ -54,10 +57,13 @@
                         <a class="pure-button" href="{{ url_for('app.about') }}">About</a>&nbsp;
                     </li>
                     <li class="nav-item">
-                        <a class="pure-button" href="https://mayahi.us10.list-manage.com/subscribe/post?u=43b384606ad56feccdab8a5ef&amp;id=ecbe89252a" target="_blank">Subscribe</a>&nbsp;
+                        <a class="pure-button"
+                           href="https://mayahi.us10.list-manage.com/subscribe/post?u=43b384606ad56feccdab8a5ef&amp;id=ecbe89252a"
+                           target="_blank">Subscribe</a>&nbsp;
                     </li>
                     <li class="nav-item">
-                        <a class="pure-button" href="https://form.jotform.com/201892949858375" target="_blank">Contact</a>&nbsp;
+                        <a class="pure-button" href="https://form.jotform.com/201892949858375"
+                           target="_blank">Contact</a>&nbsp;
                     </li>
                 </ul>
             </nav>
@@ -70,13 +76,18 @@
             {% block content %}{% endblock %}
 
             <div class="footer">
-                <p>This blog runs Python Flask, the source can be found on <a href="https://github.com/ahmadmayahi/mayahi.net">github</a></p>
+                <p>The source code for this blog can be found on <a href="https://github.com/ahmadmayahi/mayahi.net">github</a>
+                </p>
                 <div class="pure-menu pure-menu-horizontal">
                     <ul>
-                        <li class="pure-menu-item"><a href="{{ url_for('app.about') }}" class="pure-menu-link">About</a></li>
-                        <li class="pure-menu-item"><a target="_blank" href="https://twitter.com/ahmadmayahi" class="pure-menu-link">Twitter</a></li>
-                        <li class="pure-menu-item"><a target="_blank" href="https://github.com/ahmadmayahi" class="pure-menu-link">GitHub</a></li>
-                        <li class="pure-menu-item"><a target="_blank" href="https://www.linkedin.com/in/ahmadmayahi/" class="pure-menu-link">Linkedin</a></li>
+                        <li class="pure-menu-item"><a href="{{ url_for('app.about') }}" class="pure-menu-link">About</a>
+                        </li>
+                        <li class="pure-menu-item"><a target="_blank" href="https://twitter.com/ahmadmayahi"
+                                                      class="pure-menu-link">Twitter</a></li>
+                        <li class="pure-menu-item"><a target="_blank" href="https://github.com/ahmadmayahi"
+                                                      class="pure-menu-link">GitHub</a></li>
+                        <li class="pure-menu-item"><a target="_blank" href="https://www.linkedin.com/in/ahmadmayahi/"
+                                                      class="pure-menu-link">Linkedin</a></li>
                     </ul>
                 </div>
             </div>
