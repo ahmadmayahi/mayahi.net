@@ -81,3 +81,9 @@ doubly-linked-list-stacks-and-queues-in-php:
   description: "Learn how to use the doubly-linked-lists, stacks, and queue data structure in PHP"
   category: "php"
   published_at: "05 August, 2020"
+
+ternary-operator-elvis-operator-null-coalescing-operator-nullsafe-operator:
+  title: "PHP ternary operator, elvis operator, null coalescing operator, and null safe operator"
+  description: "Learn the differences between these four operators in PHP"
+  category: "php"
+  published_at: "25 August, 2020"
