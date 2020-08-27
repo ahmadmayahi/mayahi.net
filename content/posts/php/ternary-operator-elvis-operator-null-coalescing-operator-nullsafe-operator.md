@@ -1,5 +1,3 @@
-Writing clean code must be a goal for all programmers,
-
 ## Ternary Operator
 [Ternary Operator](https://en.wikipedia.org/wiki/%3F:) (`?:`) it's an inline `if-else` statement. 
 
