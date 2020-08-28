@@ -106,7 +106,7 @@ class Person { }
 $person = new Person();
 
 if (method_exists($person, 'getName')) {
-	echo $person->getName();
+	echo $person->getName() ?? 'No name';
 }
 ```
 
@@ -116,7 +116,7 @@ This operator was introduced in PHP 8.0.
 Null safe operator (`?->`) works the exact same way as elvis operator but for methods, so you don't need to use the `method_exists`:
 
 ```php
-echo $person?->getName();
+echo $person?->getName() ?? 'No name';
 ```
 
 
