@@ -50,6 +50,7 @@ def render_posts(checksum, site, categories, styles):
                                  page_id=f'{post_meta.get("category")}-{abs_post_name}',
                                  post=html,
                                  meta=post_meta,
+                                 slug=abs_post_name,
                                  site=site,
                                  category=category,
                                  title='{category} - {title}'.format(category=category.get('name'),

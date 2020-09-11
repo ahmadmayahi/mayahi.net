@@ -376,3 +376,146 @@ print("Hello World\nI love Python!".splitlines())
 ```
 
 ### Formatting
+Sometimes we can make our code more readable and a bit shorter when it comes to strings.
+
+For instance, let's take the following code:
+```python
+name = input("Enter your name? ")
+age = input("How old are you? ")
+print("Hello " + name + " , you are " + age + " years old")
+```
+
+By using the `format()` method we can make this code more readable:
+```python
+print("Hello {name}, you are {age} years old.".format(name=name, age=age))
+```
+
+You can eliminate the named placeholders as follows:
+```python
+print("Hello {}, you are {} years old.".format(name,age))
+```
+
+You may also specify the the conversion type with a colon followed by the type:
+```python
+# Format number 123456 to hex.
+print("{name:x}".format(name=123456)) # Output: 1e240
+```
+
+Available conversion types:
+
+|Conversion|Meaning|
+|---|---|
+|d|Signed integer decimal.|
+|i|Signed integer decimal.|
+|o|Unsigned octal.|
+|u|Unsigned decimal.|
+|x|Unsigned hexadecimal (lowercase).|
+|X|Unsigned hexadecimal (uppercase).|
+|e|Floating point exponential format (lowercase).|
+|E|Floating point exponential format (uppercase).|
+|f|Floating point decimal format.|
+|F|Floating point decimal format.|
+|g|Same as "e" if exponent is greater than -4 or less than precision, "f" otherwise.|
+|G|Same as "E" if exponent is greater than -4 or less than precision, "F" otherwise.|
+|c|Single character (accepts integer or single character string).|
+|r|String (converts any python object using `repr()`).|
+|s|String (converts any python object using `str()`).|
+|%|No argument is converted, results in a "%" character in the result.|
+
+I think all the conversions are obvious except `r` and `s`, so let's demystify these two conversions.
+
+Python provides a special method names starting and ending with double underlines, for instance `__str__` and `__repr__`, theses methods are used to extend the classes by providing extra features.
+
+By default, Python returns the class identifier if we try to print it out:
+
+```python
+class Person(object): pass
+print( Person ) # Ouput: <class '__main__.MyClass'>
+```
+
+By using either `__str__` or `__repr__` we can change this behavior by returning our custom data:
+```python
+class Person(object):
+    def __init__(self, name, age):
+      self.name, self.age = name, age
+    
+    def __str__(self):
+        return "Your name is {name}, and you are {age} years old".format(name=self.name, age=self.age)
+
+print( Person("Ahmad", "32") ) # Output: Your name is Ahmad, and you are 32 years old
+```
+
+Back to `r `and `s` conversions, we can represent any object which is implements `__repr__` or `__str__` when we format the string:
+```python
+class Ahmad():
+    def __str__(self):
+        return "Ahmad";
+
+print( "My name is {name}".format(name=Ahmad()) )
+```
+
+> If you write the class name with parentheses then it'll always returns the class name instead of calling the `__str__`.
+> `__str__` and `__repr__` are almost the same except that `__repr__` adds single quotes to the output while `___str__` doesn't, and it's more precise than `__str__` when it comes to number representation.
+> `__str__` is almost always used than `__repr__` so consider using it whenever you need a string representation of an object.
+
+## Tab expansion
+Sometimes, we might need to change the size of a special tab character (\t) this can be achieved by using the expandtabs method and give it the desired size of the `\t` character:
+```python
+print( "Hello\tWorld".expandtabs(16) ) # Output: Hello   World
+```
+
+## Partitioning strings
+`partition` method is used to divide a string into three sections based on the given separator, these sections are the part before a separator, the separator itself, and the part after the separator.
+
+Let's demystify it by an example:
+
+```python
+# Separate Hello World by a space
+greeting = "Hello World".partition(" ")
+
+# This outputs a tuple containing three parts
+print(greeting)
+
+# Since it's a tuple we can use the unpacking feature
+hello, _, world = greeting
+
+print(hello) # Output: Hello
+print(world) # Output: World
+```
+
+## Finding substring
+`find` and `index` methods are used to determine the first occurrence in a string, both methods return an integer which indicates the occurrence place in string:
+```python
+python = """
+Python is powerful... and fast;
+plays well with others; 
+runs everywhere; 
+is friendly & easy to learn; 
+is Open.
+"""
+
+print( python.find("Python") ) # Output: 0
+print( python.find("like") ) # Output: -1 (not found)
+print( python.find("is", 31) ) # Output: 76 (start from)
+print( python.find("is", 79, len(python)) ) # Output: 106 (start and end)
+```
+
+> `index` is exactly the same as `find` except it raises an exception if it doesn't find the string.
+
+You might need to use `rfind()` or `rindex()` to search backwards in a string (search from the right side).
+
+## Replacing
+`replace()` is used for string replacement:
+```python
+print( "Hello World".replace("Hello", "Hi") ) # Output: Hi World
+```
+
+The 3rd argument of `replace()` specifies the max number of replacement:
+```python
+print( "Hello World, Hello, Hello".replace("Hello", "Hi", 1) ) # Output: Hi World, Hello, Hello
+```
+
+## Conclusion
+In this post, I highlighted the most popular string methods, but there are many other methods which can be found on python [documentation](https://docs.python.org/3/library/string.html) page.
+
+

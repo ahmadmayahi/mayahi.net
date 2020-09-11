@@ -1,3 +1,5 @@
+![Ahmad Mayahi](./static/img/ahmad-mayahi.jpg)
+
 > Programs must be written for people to read, and only incidentally for machines to execute, <br>Harold Abelson, Structure and Interpretation of Computer Programs.
 
 Hello everybody,
@@ -26,9 +28,13 @@ Besides PHP, I have a lot of experience with many technologies.
 - HTML/CSS (of course 😀).
 - JavaScript.
 
-In this blog, I’m writing about all these technologies, sometimes you’ll see more focus on some of them, like PHP than others.
+In this blog, I’m writing about all these technologies, sometimes you’ll see more focus on some of them, such as PHP and Laravel.
 
-Please feel free to contact me, if you have any suggestions/questions.
+Please feel free to [contact me](https://form.jotform.com/201892949858375), if you have any suggestions/questions.
+
+All my posts are [available on github](https://github.com/ahmadmayahi/mayahi.net/tree/master/content/posts) in markdown format, please feel free to modify/correct any of my posts, I'd appreciate that.
+
+I wrote this blog by using Python 3.8 and Flask 1.1, you may want to [fork](https://github.com/ahmadmayahi/mayahi.net) it on github.
 
 Best,
 

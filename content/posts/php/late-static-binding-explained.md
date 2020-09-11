@@ -1,5 +1,5 @@
 PHP 5.3 came out with a fantastic OO feature called Late Static Binding, a fancy term for a simple concept.
-:smile: :heart: :thumbsup:
+
 If you take a look at some of the modern PHP frameworks/libraries you’ll see that static method is used a lot in their classes.
 
 In this post, I’ll be showing you the differences between `self` and `static` and when should we use them.

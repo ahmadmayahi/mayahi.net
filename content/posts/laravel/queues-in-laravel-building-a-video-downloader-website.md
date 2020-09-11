@@ -312,16 +312,16 @@ php artisan make:migration create_videos_table
 ```
 
 ```php
-    public function up()
-    {
-        Schema::create('videos', function (Blueprint $table) {
-            $table->uuid('id')->unique();
-            $table->string('url');
-            $table->enum('status', ['in_progress', 'failed', 'completed'])->default('in_progress');
-            $table->json('info')->nullable();
-            $table->timestamps();
-        });
-    }
+public function up()
+{
+    Schema::create('videos', function (Blueprint $table) {
+        $table->uuid('id')->unique();
+        $table->string('url');
+        $table->enum('status', ['in_progress', 'failed', 'completed'])->default('in_progress');
+        $table->json('info')->nullable();
+        $table->timestamps();
+    });
+}
 ```
 
 ``bash
@@ -528,15 +528,12 @@ Go back to the web browser and refresh the page:
 
 Click Download and enjoy.
 
-
-
 ## Error Handling
-What if youtube-dl couldn’t download the requested video? what is going to happen in such a case?
+What if youtube-dl couldn't download the requested video? what is going to happen in such a case?
 
 If you take a look at the DownloadVideo job, you can see that the process is set to me mustRun, so, if it fails an exception of type ProcessFailedException will be thrown.
 
 > If an exception is thrown while the job is being processed, the job will automatically be released back onto the queue so it may be attempted again.
-
 
 You can instruct Laravel to retry the failed job for certain times, this can be done either by instructing the worker or by using the $tries property into our job:
 

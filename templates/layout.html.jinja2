@@ -15,6 +15,8 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
+
     {% block meta_tags %}{% endblock %}
 
     {% block stylesheets %}{% endblock %}
@@ -43,58 +45,100 @@
         m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
     }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/43b384606ad56feccdab8a5ef/2feef4fdbbd7813d7c898face.js");</script>
 </head>
-<body>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
-<div id="layout" class="pure-g">
-    <div class="sidebar pure-u-1 pure-u-md-1-4">
-        <div class="header">
-            <h1 class="brand-title"><a href="{{ url_for('app.home') }}">Ahmad Mayahi</a></h1>
-            <h2 class="brand-tagline">Web Development Blog</h2>
+<nav id="header" class="fixed w-full z-10 top-0">
 
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a class="pure-button" href="{{ url_for('app.about') }}">About</a>&nbsp;
-                    </li>
-                    <li class="nav-item">
-                        <a class="pure-button"
-                           href="https://mayahi.us10.list-manage.com/subscribe/post?u=43b384606ad56feccdab8a5ef&amp;id=ecbe89252a"
-                           target="_blank">Subscribe</a>&nbsp;
-                    </li>
-                    <li class="nav-item">
-                        <a class="pure-button" href="https://form.jotform.com/201892949858375"
-                           target="_blank">Contact</a>&nbsp;
-                    </li>
-                </ul>
-            </nav>
+    <div id="progress" class="h-1 z-20 top-0"
+         style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+    <div class="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+        <div class="pl-4">
+            <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl"
+               href="{{ url_for('app.home') }}">
+                Ahmad Mayahi
+            </a>
+        </div>
+
+        <div class="block lg:hidden pr-4">
+            <button id="nav-toggle"
+                    class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-teal-500 appearance-none focus:outline-none">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>
+                    Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 md:bg-transparent z-20"
+             id="nav-content">
+            <ul class="list-reset lg:flex justify-end flex-1 items-center">
+                <li class="mr-3">
+                    <a class="inline-block py-2 px-4 text-gray-900 font-bold no-underline"
+                       href="{{ url_for('app.about') }}">About Me</a>
+                </li>
+                <li class="mr-3">
+                    <a target="_blank" class="inline-block py-2 px-4 text-gray-900 font-bold no-underline"
+                       href="https://form.jotform.com/201892949858375">Contact Me</a>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
 
-    <div class="content pure-u-1 pure-u-md-3-4">
-        <div>
-
-            {% block content %}{% endblock %}
-
-            <div class="footer">
-                <p>The source code for this blog can be found on <a href="https://github.com/ahmadmayahi/mayahi.net">github</a>
-                </p>
-                <div class="pure-menu pure-menu-horizontal">
-                    <ul>
-                        <li class="pure-menu-item"><a href="{{ url_for('app.about') }}" class="pure-menu-link">About</a>
-                        </li>
-                        <li class="pure-menu-item"><a target="_blank" href="https://twitter.com/ahmadmayahi"
-                                                      class="pure-menu-link">Twitter</a></li>
-                        <li class="pure-menu-item"><a target="_blank" href="https://github.com/ahmadmayahi"
-                                                      class="pure-menu-link">GitHub</a></li>
-                        <li class="pure-menu-item"><a target="_blank" href="https://www.linkedin.com/in/ahmadmayahi/"
-                                                      class="pure-menu-link">Linkedin</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--Container-->
+<div class="container w-full md:max-w-4xl mx-auto pt-20">
+    {% block content %}{% endblock %}
 </div>
 
+<div class="mb-8 mx-4"></div>
+
+{% include 'footer.html.jinja2' %}
+
+<script>
+    /* Progress bar */
+    //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+    var h = document.documentElement,
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight',
+        progress = document.querySelector('#progress'),
+        scroll;
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+
+    document.addEventListener('scroll', function () {
+
+        /*Refresh scroll % width*/
+        scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+        progress.style.setProperty('--scroll', scroll + '%');
+
+        /*Apply classes for slide in bar*/
+        scrollpos = window.scrollY;
+
+        if (scrollpos > 10) {
+            header.classList.add("bg-white");
+            header.classList.add("shadow");
+            navcontent.classList.remove("bg-gray-100");
+            navcontent.classList.add("bg-white");
+        } else {
+            header.classList.remove("bg-white");
+            header.classList.remove("shadow");
+            navcontent.classList.remove("bg-white");
+            navcontent.classList.add("bg-gray-100");
+
+        }
+
+    });
+
+
+    //Javascript to toggle the menu
+    document.getElementById('nav-toggle').onclick = function () {
+        document.getElementById("nav-content").classList.toggle("hidden");
+    }
+
+</script>
 </body>
 </html>
-

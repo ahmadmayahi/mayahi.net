@@ -22,27 +22,57 @@
 {% set style_hash = style_hash %}
 
 {% block javascript %}
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/atom-one-light.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
 {% endblock %}
 
 {% block content %}
-    <article class="post">
-            <aside>
-                « <a href="{{ url_for('app.home') }}">Back</a> - written by <a href="https://mayahi.net">Ahmad Mayahi</a> on
-                {{ meta.get('published_at') }} published under <span class="post-category post-category-{{ meta.get('category') }}">{{ category.get('name') }}</span>
-            </aside>
+    <article
+            class="w-full p-8 mt-6 lg:mt-0 text-gray-900 text-xl leading-normal bg-white border border-gray-400 border-rounded">
+        <div class="font-sans">
+				<span class="text-base md:text-sm text-teal-700 font-bold">&lt;<span> <a
+                        href="{{ url_for('app.home') }}"
+                        class="text-base md:text-sm text-teal-500 font-bold no-underline hover:underline">BACK TO BLOG</a><p></p>
+				<h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">{{ meta.get('title') }}</h1>
+				<p class="text-sm md:text-base font-normal text-gray-600">Published {{ meta.get('published_at') }}</p>
+			</span>
+                </span>
+        </div>
 
-            <h1>{{ meta.get('title') }}</h1>
-            <hr>
+        <div class="py-3">
+            {{ post }}
+        </div>
 
-            <div class="post-content">
-                {{ post }}
-            </div>
+        <p class="text-right">
+            <a target="_blank"
+               href="{{ site.get('github_repository') }}/blob/master/content/posts/{{ category.get('name').lower() }}/{{ slug }}.md">Edit
+                on Github</a>
+        </p>
+    </article>
 
-            <div class="alert alert-info">Would you like improving this post?
-                <a target="_blank" href="{{ site.get('github_repository') }}/blob/master/content">Edit on Github</a></div>
+    {#    <div class="mb-8 mx-4"></div>#}
+    {#    {% include 'comments.html.jinja2' %}#}
 
-            {% include 'comments.html.jinja2' %}
+    <div class="mb-8 mx-4"></div>
+    <article class="font-sans bg-white rounded-lg shadow-md p-4 text-center">
+        <h2 class="font-bold break-normal text-xl md:text-3xl">Subscribe to my Newsletter</h2>
+        <h3 class="font-bold break-normal font-normal text-gray-600 text-sm md:text-base">Get the latest posts delivered
+            right to your inbox</h3>
+        <div class="w-full text-center pt-4">
+            <form target="_blank" action="https://mayahi.us10.list-manage.com/subscribe/post" method="POST">
+                <input type="hidden" name="u" value="43b384606ad56feccdab8a5ef">
+                <input type="hidden" name="id" value="ecbe89252a">
+                <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                    <input type="email" placeholder="youremail@example.com" name="MERGE0" id="MERGE0"
+                           class="flex-1 mt-4 appearance-none border border-gray-400 rounded shadow-md p-3 text-gray-600 mr-2 focus:outline-none">
+                    <button type="submit"
+                            class="flex-1 mt-4 block md:inline-block appearance-none bg-teal-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-teal-400">
+                        Subscribe
+                    </button>
+                </div>
+            </form>
+        </div>
     </article>
 
     <script>

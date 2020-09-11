@@ -75,9 +75,14 @@ def save_html_page_from_mrakdown(markdown_file_path, html_file_path):
 
 def markdown_bootstrap():
     return {
-        '<img': '<img class="img-fluid mx-auto"',
-        '<blockquote': '<blockquote class="blockquote"',
-        '<table': '<div class="table"><table class="table"',
+        '<h2': '<h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-2xl"',
+        '<ul': '<ul class="list-disc list-inside leading-10 pl-8"',
+        '<ol>': '<ul class="list-decimal  leading-8">',
+        '<p>': '<p class="py-2 leading-9">',
+        '<pre>': '<pre class="py-3">',
+        '<img' : '<img class="py-3 md:object-center"',
+        '<blockquote>': '<blockquote class="border-l-4 border-teal-500 italic my-8 pl-8 md:pl-12">',
+        '<table>': '<div class="table"><table class="table">',
         '</table>': '</table></div>',
     }
 
@@ -173,10 +178,11 @@ def minify_html(html):
 def get_styles(site):
     http = urllib3.PoolManager()
     styles = ""
-    for style in site.get('external_styles'):
-        r = http.request('GET', style)
-        styles = styles + r.data.decode('utf8')
 
+    # for style in site.get('external_styles'):
+    #     r = http.request('GET', style)
+    #     styles = styles + r.data.decode('utf8')
+    #
     with open(abs_path('static', 'styles.css'), 'r') as file:
         styles = styles + file.read()
 

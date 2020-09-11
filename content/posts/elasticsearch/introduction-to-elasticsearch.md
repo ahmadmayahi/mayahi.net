@@ -1,33 +1,35 @@
-I used to work in a company where almost everything seemed to be difficult for our boss.
+> This post is not finished yet.
+
+I used to work in a company where almost everything seemed to be [complicated](https://mayahi.net/software-development/it-is-complicated/)  for our boss.
 
 The boss was one of those old-school guys who stuck with their computer science degree and don’t want to move ahead.
 
-You may ask, why am I talking about my ex-boss in an Elasticsearch post?
+You may ask, why am I talking about my ex-boss in an Elasticsearch post? 🤔
 
 The application that we were building was using PostgresSQL to do some full-text searching, but guess what, the searching could take at least 30 seconds to complete, imagine, thirty seconds waiting to get a few results, that is insane.
 
 The database was not normalized, and you’d join multiple tables to narrow down the results, even if you’d perform a simple search, much less full-text searching.
 
 ## What is Elasticsearch?
-Elasticsearch is a highly-scalable open-source full-text search engine that is based on Apache Lucene.
+Elasticsearch is a highly-scalable open-source full-text search engine that is based on [Apache Lucene](https://lucene.apache.org/).
 
 Elasticsearch provides full-text search with an HTTP web interface and schema-free JSON, this means that you’d communicate with Elasticsearch servers by sending HTTP requests and parsing the HTTP responses (which are in JSON as well).
 
-Elasticsearch has a numerous features:
+Elasticsearch has numerous features:
 
-- Highly optimized for searching; it uses some techniques that make searching blazing, such as analyzers, stemmers, etc…
-- Built on top of Apache Lucene, an ultra-fast search library, this means that it uses the same indexing as Lucene.
-- Uses Rest API: send json requests and get json responses, that’s it.
+- Highly optimized for searching; it uses some techniques that make searching blazing, such as analyzers, stemmers, etc.
+- Built on top of [Apache Lucene](https://lucene.apache.org/), an ultra-fast search library, this means that it uses the same indexing as Lucene.
+- Uses Rest API: Send json requests and get json responses, that’s it.
 - Very fast.
 - Easy to work with.
 
 ## Installing Elasticsearch
 I’m not going to cover the installation process since it’s already described [here](https://www.elastic.co/downloads/elasticsearch).
 
-Anyway, If you’re running Docker – as I do – then you may spin up an Elasticsearch container as follows:
+Anyway, If you’re running Docker – __as I do__ – then you may spin up an Elasticsearch container as follows:
 
 ```bash
-docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.8.0
+docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.9.0
 ```
 
 Elasticsearch uses port 9200 for the REST API, so, let’s ensure that it’s up and running:
@@ -57,25 +59,29 @@ curl http://localhost:9200
 ```
 
 ## Elasticsearch vs RDBMS
-Now we have an Elasticsearch container up and running on our machine, but you may ask what the difference between Elasticsearch and other RDBMS such as MySQL?
+Now we have an Elasticsearch container running on our machine, but you may ask what the differences between Elasticsearch and other RDBMS such as MySQL are? I mean, what the purpose of using yet another database? 
 
-Elasticsearch is a No-SQL database, this means that it doesn’t have relations, joins, and transactions as the RDBMS does.
+The short answer is that Elasticsearch is meant to be for searching, that's it, but doesn't MySQL/PostgreSQL do the same job?
 
-> Elasticsearch does have sort of simple joining, I’ll cover that in the upcoming posts.
+Yes, they do, but not in an efficient and fast way, so let's see the differences.
+
+Elasticsearch is a No-SQL database, this means that it doesn't have relations, joins, and transactions as the RDBMS does.
+
+> Elasticsearch does have sort of simple and limited joining.
 
 Elasticsearch is suitable for many different use cases:
 
 - Highly optimized for searching.
-- Scalable by default.
 - Full-text searching in a big amount of data, where the relevance matters.
 - Creating an autocomplete feature.
 - Implementing the did-you-mean feature when entering misspelled words.
 - Searching in external files, such as PDF, XLS, PPT, etc…
+- Scalable by default.
 - Much more...
 
 Elasticsearch uses text analysis to provide the best searching experience (I will describe how it does that later in this post).
 
-Let’s say that you want to search for the word father but you also want to match dad, daddy, papa, parent, etc.. Elasticsearch can do that for you.
+Let’s say that you want to search for the word "father" but you also want to match "dad", "daddy", "papa", "parent", etc.. Elasticsearch can do that for you.
 
 That was Elasticsearch, so, how about RDBMS?
 
@@ -83,20 +89,18 @@ If you want some of the RDBMS features such as transactions, then you definitely
 
 In most cases, you need a fast search engine as well as joins and transactions, that’s completely fine, you can have Elasticsearch running beside your RDBMS, but remember you do need to sync your data between Elasticsearch and your database.
 
-Later in this post, I will show you how to use Laravel observers to achieve syncing.
-
 ## Elasticsearch Concepts
 Let’s get familiar with the basic terms of Elasticsearch.
 
-- Index: similar to the database’s table; An index can contain a collection of documents.
-- Document: similar to the database’s record; A document is any structured JSON data.
-- Field: same as the database’s field; Fields must-have types, such as long, date, byte, short, integer, etc…
-- Multi-Fields: in contrast with databases, in Elasticsearch a field could have multiple fields with different data types (I will explain this later).
-- Mapping: each field has to be mapped to a data type, the process of setting the appropriate data types is called mappings.
-- Analyzer: breaks the text down into small searchable chunks.
-- Shard: an index can be split into small chunks named “shards”; Shards can also be placed into different nodes (machines).
+- **Index**: similar to the database’s table; An index can contain a collection of documents.
+- **Document**: similar to the database’s record; A document is any structured JSON data.
+- **Field**: same as the database’s field; Fields must-have types, such as long, date, byte, short, integer, etc…
+- **Multi-Fields**: in contrast with databases, in Elasticsearch a field could have multiple fields with different data types (I will explain this later).
+- **Mapping**: each field has to be mapped to a data type, the process of setting the appropriate data types is called mappings.
+- **Analyzer**: breaks the text down into small searchable chunks.
+- **Shard**: an index can be split into small chunks named "shards"; Shards can also be placed into different nodes (machines).
 
-Let’s discuss these terms thorughly.
+Let’s discuss these terms thoroughly.
 
 ## Index
 An index is nothing but a collection of documents.
@@ -112,11 +116,16 @@ docker exec -it elasticsearch sh
 cd /usr/share/elasticsearch/data/nodes/0/indices
 ```
 
-Elasticsearch stores all the indices in a folder named indices inside the nodes folder, but why nodes?
+Elasticsearch stores all the indices in a folder named `indices` inside the `nodes` folder, but why nodes?
 
-Remember I said that Elasticsearch is scalable by default, this means that you can easily scale it by adding more nodes into the cluster.
+Remember I said that Elasticsearch is **scalable by default**, this means that you can easily scale it by adding more nodes into the cluster.
 
-> Elasticsearch can only index text-based documents, if you want to index your PDF, PPT, XLS files, then consider using the Elasticsearch-Mapper-Attachments plugin (which is based on Apache Tika).
+> Elasticsearch can only index text-based documents, if you want to index PDF, PPT, XLS files, then consider using the [Elasticsearch-Mapper-Attachments](https://github.com/elastic/elasticsearch-mapper-attachments) plugin (which is based on [Apache Tika](https://tika.apache.org/)).
+
+## Document
+A document is any structured JSON data.
+
+
 
 ## Sharding
 Since we’re learning Elasticsearch, it’s very important to know what the sharding is.
@@ -125,7 +134,7 @@ Imagine that you want to index 1 TB of data and you only have a single node with
 
 If you add an additional node with sufficient capacity, Elasticsearch can store data in both nodes, meaning that the cluster now has enough storage capacity.
 
-Sharding is a way of dividing indices into smaller pieces, so each piece is referred to as a shard.
+**Sharding is a way of dividing indices into smaller pieces**, so each piece is referred to as a shard.
 
 For example, an index of size 1 TB could be divided into four shards of sizes 250 GB and then spreading over four nodes.
 
@@ -215,6 +224,8 @@ curl --location --request POST 'http://localhost:9200/employees/_doc' \
 
 The document must have a unique id; therefore, Elasticsearch assigns an arbitrary id for the newly created document.
 
+What if you want to specify another id? this can be done by appending the document id as follows:
+
 ```bash
 http://127.0.0.1:9200/employees/_doc/1
 ```
@@ -224,6 +235,7 @@ What if you want to get all the indexed documents?
 ```bash
 curl --location --request GET 'http://localhost:9200/employees/_search'
 ```
+
 ```json
 {
     "took": 1,
@@ -259,7 +271,7 @@ curl --location --request GET 'http://localhost:9200/employees/_search'
 
 Don’t worry about this big document, I’ll get back to it soon.
 
-Take a look at the `_source` key which contains the entire document that you indexed.
+> The `_source` key contains the entire document that you indexed.
 
 Repeat the same step to add more employees.
 

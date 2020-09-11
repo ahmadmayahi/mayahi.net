@@ -18,13 +18,13 @@ all-about-strings-in-python3:
 
 immutable-vs-mutable-objects-in-python:
   title: "Immutable vs Mutable Objects in Python"
-  description: "Make your queries run faster by calling them statically."
+  description: "Learn the differences between mutable and immutable objects in Python"
   category: "python"
   published_at: "17 April, 2019"
 
 it-is-complicated:
   title: "It's complicated"
-  description: ""
+  description: "What does the complication term mean in software development?"
   category: "software-development"
   published_at: "7 June, 2019"
 
@@ -87,3 +87,9 @@ ternary-operator-elvis-operator-null-coalescing-operator-nullsafe-operator:
   description: "Learn the differences between these four operators in PHP"
   category: "php"
   published_at: "25 August, 2020"
+
+eloquent-performance-tips:
+  title: "Eloquent Performance Tips"
+  description: "A series of posts that teaches you how to optimize your Eloquent queries"
+  category: "laravel"
+  published_at: "11 September, 2020"

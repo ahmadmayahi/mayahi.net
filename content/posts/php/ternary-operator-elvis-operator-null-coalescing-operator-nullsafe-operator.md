@@ -80,7 +80,7 @@ var_dump(false ?? "Second Value"); // bool(false)
 var_dump(0 ?? "Second Value"); // int(0)
 ```
 
-Let's try to use on an undefined class property:
+Let's try to use it on an undefined class property:
 
 ```php
 class Person { }
@@ -95,7 +95,11 @@ It works well, but how about the undefined class methods?
 class Person { }
 
 $person = new Person();
-echo $person->getName() ?? 'No name'; // PHP Fatal error:  Uncaught Error: Call to undefined method Person::getName()
+echo $person->getName() ?? 'No name';
+```
+
+```text
+PHP Fatal error:  Uncaught Error: Call to undefined method Person::getName()
 ```
 
 You could solve this by using the `method_exists()` function:
@@ -113,10 +117,10 @@ if (method_exists($person, 'getName')) {
 ## Null safe operator
 This operator was introduced in PHP 8.0.
 
-Null safe operator (`?->`) works the exact same way as elvis operator but for methods, so you don't need to use the `method_exists`:
+Null safe operator (`?->`) doesn't throw an error if the method 
 
 ```php
-echo $person?->getName() ?? 'No name';
+echo $person?->getName();
 ```
 
 
