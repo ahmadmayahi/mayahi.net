@@ -93,3 +93,9 @@ eloquent-performance-tips:
   description: "A series of posts that teaches you how to optimize your Eloquent queries"
   category: "laravel"
   published_at: "11 September, 2020"
+
+eloquent-performance-eager-loading:
+  title: "Eloquent Performance: Eager-loading"
+  description: "Learn how to fix N+1 issues by using the eager-loading"
+  category: "laravel"
+  published_at: "12 September, 2020"

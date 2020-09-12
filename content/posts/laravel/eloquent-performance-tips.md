@@ -73,7 +73,7 @@ In the upcoming posts I will show you some great tips to avoid N+1 problem as we
 
 > Remember, your focus should be on reducing the time that the sql queries take to run, that's it.
 
-## Tip 1: Laravel Debugger
+## Laravel Debugger
 [Laravel Debugger](https://github.com/barryvdh/laravel-debugbar) is a great tool for measuring your database performance as well as debugging some other application layers.
 
 > If you are already familiar with Laravel Debugger, then we may want to skip this part.
@@ -112,4 +112,4 @@ select * from `users` limit 10
 
 And if you inspect the **Models** tab, you'll see ten models; this means that we've got ten Eloquent models loaded on the current route.
 
-In the upcoming post I will discuss the eager-loading.
+In the [upcoming post](../eloquent-performance-eager-loading) I will discuss the eager-loading.
