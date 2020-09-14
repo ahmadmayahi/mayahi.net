@@ -94,8 +94,20 @@ eloquent-performance-tips:
   category: "laravel"
   published_at: "11 September, 2020"
 
+eloquent-performance-avoid-select-star:
+  title: "Eloquent Performance: Avoid SELECT *"
+  description: "Learn how to use subqueries"
+  category: "laravel"
+  published_at: "12 September, 2020"
+
 eloquent-performance-eager-loading:
   title: "Eloquent Performance: Eager-loading"
   description: "Learn how to fix N+1 issues by using the eager-loading"
   category: "laravel"
-  published_at: "12 September, 2020"
+  published_at: "13 September, 2020"
+
+eloquent-performance-subqueries:
+  title: "Eloquent Performance: Subqueries"
+  description: "Learn how to use subqueries"
+  category: "laravel"
+  published_at: "14 September, 2020"
