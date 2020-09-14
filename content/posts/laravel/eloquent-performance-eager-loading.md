@@ -112,4 +112,4 @@ It fetches all the login records for the current user, and then it uses only the
 
 While it's not a big problem if we have a few login entries, it could be a serious problem if there are too many records (1000+ records for each user).
 
-I will show you a great solution in the next upcoming post.
+I will show you a great solution in the next [upcoming post](../eloquent-performance-subqueries/).
