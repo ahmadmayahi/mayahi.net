@@ -10,7 +10,7 @@ app.register_blueprint(manage)
 app.config.update(
     TEMPLATES_AUTO_RELOAD=True,
     SERVER_NAME=getenv('SERVER_NAME'),
-    PREFERRED_URL_SCHEME = 'https'
+    PREFERRED_URL_SCHEME = getenv('PREFERRED_URL_SCHEME')
 )
 
 
