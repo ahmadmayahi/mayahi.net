@@ -114,6 +114,6 @@ eloquent-performance-subqueries:
 
 eloquent-performance-fake-relationships:
   title: "Eloquent Performance: Fake relationships"
-  description: "Learn how to use subqueries"
+  description: "Learn how to use fake relationships to create robust queries"
   category: "laravel"
   published_at: "15 September, 2020"
