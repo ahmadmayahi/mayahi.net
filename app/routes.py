@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, abort
-from app.helpers import read_post, read_html_page
+from flask import Blueprint, render_template, abort, make_response, Response
+from app.helpers import read_post, read_html_page, read_yaml_file, abs_path
 
 bp = Blueprint('app', __name__, template_folder='templates', static_folder='static')
 
@@ -7,11 +7,6 @@ bp = Blueprint('app', __name__, template_folder='templates', static_folder='stat
 @bp.route('/')
 def home():
     return read_html_page('index')
-
-
-@bp.route('/subscribe')
-def subscribe():
-    return read_html_page('subscribe')
 
 
 @bp.route('/<string:cat>/<string:post>/')
@@ -22,11 +17,6 @@ def view_post(cat, post):
         abort(404)
 
 
-@bp.route('/categories')
-def categories():
-    return 'Categories'
-
-
 @bp.route('/about')
 def about():
     return read_html_page('about')
@@ -34,4 +24,11 @@ def about():
 
 @bp.errorhandler(404)
 def page_not_found(error):
-    return render_template('error404.html.jinja2'), 404
+    site = read_yaml_file(abs_path('settings', 'site.yaml'))
+    output = render_template('error404.html.jinja2', site=site, title='Page not found')
+    headers = {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': 0
+    }
+    return make_response(output, 404, headers)

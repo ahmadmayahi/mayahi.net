@@ -1,1 +1,17 @@
-<h1>Error 404</h1>
+{% extends 'layout.html.jinja2' %}
+
+{% block content %}
+    <div class="w-full p-8 mt-6 lg:mt-0 leading-normal bg-white border border-gray-400 border-rounded text-center content-center object-center">
+
+        <p class="md:flex md:justify-center mb-6">
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"><img class="md:flex md:justify-center mb-6"
+                                                       src="{{ url_for('static', filename='img/404.svg') }}"
+                            width="128"></a></p>
+
+        <p class="text-sm">
+            Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </p>
+    </div>
+{% endblock %}
+
