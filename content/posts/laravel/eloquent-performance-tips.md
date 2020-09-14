@@ -112,4 +112,4 @@ select * from `users` limit 10
 
 And if you inspect the **Models** tab, you'll see ten models; this means that we've got ten Eloquent models loaded on the current route.
 
-In the [upcoming post](../eloquent-performance-eager-loading) I will discuss the eager-loading.
+In the [upcoming post](../eloquent-performance-avoid-select-star) I will show you how to optimize your Eloquent queries by only selecting the needed columns.
