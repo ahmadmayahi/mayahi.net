@@ -96,7 +96,7 @@ eloquent-performance-tips:
 
 eloquent-performance-avoid-select-star:
   title: "Eloquent Performance: Avoid SELECT *"
-  description: "Learn how to use subqueries"
+  description: "Learn how to select only the needed columns to make your query runs faster"
   category: "laravel"
   published_at: "12 September, 2020"
 
