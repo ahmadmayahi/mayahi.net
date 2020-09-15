@@ -77,7 +77,7 @@ def markdown_bootstrap():
     return {
         '<h2': '<h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-2xl"',
         '<ul': '<ul class="list-disc list-inside leading-10 pl-8"',
-        '<ol>': '<ul class="list-decimal  leading-8">',
+        '<ol>': '<ol class="list-decimal list-inside leading-10 pl-8">',
         '<p>': '<p class="py-2 leading-9">',
         '<pre>': '<pre class="py-3">',
         '<img' : '<img class="py-3 md:object-center"',
