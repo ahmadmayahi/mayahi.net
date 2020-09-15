@@ -117,3 +117,10 @@ eloquent-performance-fake-relationships:
   description: "Learn how to use fake relationships to create robust queries"
   category: "laravel"
   published_at: "15 September, 2020"
+
+eloquent-performance-reusable-relationships:
+  title: "Eloquent Performance: Reusable relationships"
+  description: "Learn how to make your Eloquent queries run faster by using the reusable relationships"
+  category: "laravel"
+  published_at: "16 September, 2020"
+
