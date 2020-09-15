@@ -1,9 +1,11 @@
-Sometimes, the relationship was already loaded somewhere, but we often load it repeatedly, causing some N+1 problems. 
+Sometimes we end up causing N+1 problems by reloading the same relationships that we already loaded.
 
-Let me clarify this by an example.
-
-Let's say that you have a method named `isAuthor()` in the `App\Models\Comment`, this method determines whether the author of the comment is the same author of the post:
+Let's say that you have a method named `isAuthor()` in the `App\Models\Comment`.
+ 
+The method determines whether the author of the comment is the same author of the post:
 ```php
+// App\Models\Comment
+
 public function isAuthor(): bool
 {
     return $this->post->user_id === $this->user_id;
@@ -40,9 +42,9 @@ In the template we show a badge if the comment's author is the same as the post'
 
 As you see in the template, the `isAuthor()` method was called inside the `foreach` (N+1 problem).
 
-Since the `App\Models\Post` was already loaded in the controller, can't we reuse it? So we prevent the `isAuthor` method from calling the database again to fetch the same model.
+Since the `App\Models\Post` was already loaded in the controller, can't we reuse it instead of calling the database again to fetch the same model (`App\Models\Post`)?
 
-Yes, we can that by using the `setRelation` method on the `Illuminate\Database\Eloquent\Collection`:
+Yes, we can do that by using the `setRelation()` method on the `Illuminate\Database\Eloquent\Collection`:
 ```php
 // App\Controllers\PostsController
 
@@ -54,6 +56,6 @@ $post->comments->each->setRelation('post', $post);
 return view('posts.show', compact('post'));
 ```
 
-The fix is too easy; We tell Laravel to apply the `setRelation` method on each `App\Models\Comment`, so it doesn't need to fetch again from the database, that's it.
+No N+1 problem, that's amazing.
 
 In the next post, I will discuss counting records in a single query.
