@@ -58,4 +58,4 @@ return view('posts.show', compact('post'));
 
 No N+1 problem, that's amazing.
 
-In the next post, I will discuss counting records in a single query.
+In the [next post](../eloquent-performance-multiple-counting-using-one-select), I will discuss counting records in a single query.
