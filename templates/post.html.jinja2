@@ -8,7 +8,7 @@
     <meta name="twitter:description" content="{{ meta.get('description') }}">
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:creator" content="@{{ site.get('social').get('twitter') }}"/>
-
+    <link rel="canonical" href="{{ page_url }}">
     <meta itemprop="name" content="{{ title }}">
     <meta itemprop="description" content="{{ meta.get('description') }}">
 
@@ -49,13 +49,13 @@
                href="{{ site.get('github_repository') }}/blob/master/content/posts/{{ category.get('name').lower() }}/{{ slug }}.md">Edit
                 on Github</a>
         </p>
+
     </article>
 
-    {#    <div class="mb-8 mx-4"></div>#}
-    {#    {% include 'comments.html.jinja2' %}#}
+    <div class="mb-8 mx-4"></div>
 
     <div class="mb-8 mx-4"></div>
-    <article class="font-sans bg-white rounded-lg shadow-md p-4 text-center">
+    <div class="font-sans bg-white rounded-lg shadow-md p-4 text-center">
         <h2 class="font-bold break-normal text-xl md:text-3xl">Subscribe to my Newsletter</h2>
         <h3 class="font-bold break-normal font-normal text-gray-600 text-sm md:text-base">Get the latest posts delivered
             right to your inbox</h3>
@@ -73,7 +73,7 @@
                 </div>
             </form>
         </div>
-    </article>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {

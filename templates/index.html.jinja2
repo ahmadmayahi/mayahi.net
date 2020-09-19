@@ -1,5 +1,10 @@
 {% extends 'layout.html.jinja2' %}
 
+{% block meta_tags %}
+<meta name="description" content="A web development blog with special focus on PHP and Laravel">
+<link rel="canonical" href="https://mayahi.net">
+{% endblock %}
+
 {% block content %}
     {% for name, post in posts %}
     <div class="flex w-full items-center font-sans px-4 py-12 bg-white border border-gray-400 border-rounded">

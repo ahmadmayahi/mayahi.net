@@ -1,12 +1,15 @@
 {% extends 'layout.html.jinja2' %}
 
+{% block meta_tags %}
+<meta name="description" content="A web development blog with special focus on PHP and Laravel">
+{% endblock %}
+
 {% block content %}
-    <article
+    <div
             class="w-full p-8 mt-6 lg:mt-0 text-gray-900 text-xl leading-normal bg-white border border-gray-400 border-rounded">
         <h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">{{ title }}</h1>
         <div class="post-content">
             {{ body }}
         </div>
-
-    </article>
+    </div>
 {% endblock %}

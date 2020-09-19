@@ -3,9 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="A web development blog with special focus on PHP and Laravel">
-
-    <title>Ahmad Mayahi - {{ title }}</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/favicons/apple-touch-icon.png') }}">
 
@@ -65,12 +62,12 @@
 
     <div class="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
 
-        <div class="pl-4">
+        <h1 class="pl-4">
             <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl"
                href="{{ url_for('app.home') }}">
                 Ahmad Mayahi
             </a>
-        </div>
+        </h1>
 
         <div class="block lg:hidden pr-4">
             <button id="nav-toggle"
