@@ -122,7 +122,7 @@ This means that MySQL is able to use the `name_index` on the `companies` table.
 ## Searching in multiple fields within multiple tables
 Sometimes you need to use the `LIKE` operator in two different fields within two separate tables.
 
-For example, you would like to search for either the `users_name_index` or `user.company.name`:
+For example, you would like to search for either the `user.name` or `user.company.name` fields:
 
 ```php
 // App\Models\User
