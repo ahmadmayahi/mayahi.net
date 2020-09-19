@@ -129,3 +129,9 @@ eloquent-performance-multiple-counting-using-one-select:
   description: "Learn how to use count different statues using one single select statement"
   category: "laravel"
   published_at: "17 September, 2020"
+
+eloquent-performance-faster-LIKE-searching:
+  title: "Eloquent Performance: Faster LIKE searching"
+  description: "Learn how to LIKE operator could affect your seaching performance"
+  category: "laravel"
+  published_at: "19 September, 2020"

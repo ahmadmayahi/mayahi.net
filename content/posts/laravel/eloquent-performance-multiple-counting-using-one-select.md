@@ -18,3 +18,5 @@ Post::toBase()->
     ->selectRaw('count(IF(status = 'draft', 1, null)) as draft')
     ->get();
 ```
+
+In the [next post](../eloquent-performance-faster-LIKE-searching/), I will discuss the LIKE operator, and how it could impact the performance.
