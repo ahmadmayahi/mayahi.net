@@ -68,7 +68,7 @@ def save_html_page_from_mrakdown(markdown_file_path, html_file_path):
     styles = get_styles(site)
 
     with open(html_file_path, 'w') as file:
-        html = render_template('page.html.jinja2', title=pages[name].get('name'), body=html, site=site, style=styles)
+        html = render_template('page.html.jinja2', title=site.get('title') + ' - ' + pages[name].get('name'), body=html, site=site, style=styles)
         file.write(html)
         file.close()
 
@@ -81,7 +81,7 @@ def markdown_bootstrap():
         '<ol>': '<ol class="list-decimal list-inside leading-10 pl-8">',
         '<p>': '<p class="py-2 leading-9">',
         '<pre>': '<pre class="py-3">',
-        '<img' : '<img class="py-3 md:object-center"',
+        '<img': '<img class="py-3 md:object-center"',
         '<blockquote>': '<blockquote class="border-l-4 border-teal-500 italic my-8 pl-8 md:pl-12">',
         '<table>': '<div class="table"><table class="table">',
         '</table>': '</table></div>',
@@ -131,6 +131,7 @@ def read_html_page(page):
 def read_sitemap_page():
     with open(abs_path('content', 'sitemap.xml'), 'r') as file:
         return file.read()
+
 
 def add_to_manifest(key, value):
     manifest_file = abs_path('var', 'manifest.json')

@@ -80,7 +80,7 @@ def render_home_page(styles, site, categories):
                                  style=styles,
                                  site=site,
                                  posts=get_ordered_posts(),
-                                 categories=categories, title='Home Page')
+                                 categories=categories, title=site.get('title'))
         file.write(helpers.minify_html(output))
 
 
