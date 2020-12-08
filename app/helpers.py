@@ -76,6 +76,7 @@ def save_html_page_from_mrakdown(markdown_file_path, html_file_path):
 def markdown_bootstrap():
     return {
         '<h2': '<h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-2xl"',
+        '<h3': '<h3 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-2xl md:text-xl"',
         '<ul': '<ul class="list-disc list-inside leading-10 pl-8"',
         '<ol>': '<ol class="list-decimal list-inside leading-10 pl-8">',
         '<p>': '<p class="py-2 leading-9">',
@@ -126,6 +127,10 @@ def read_html_page(page):
     with open(abs_path('var', 'pages', page + '.html'), 'r') as index:
         return index.read()
 
+
+def read_sitemap_page():
+    with open(abs_path('content', 'sitemap.xml'), 'r') as file:
+        return file.read()
 
 def add_to_manifest(key, value):
     manifest_file = abs_path('var', 'manifest.json')

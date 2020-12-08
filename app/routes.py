@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, abort, make_response, Response
-from app.helpers import read_post, read_html_page, read_yaml_file, abs_path
+from app.helpers import read_post, read_html_page, read_yaml_file, abs_path, read_sitemap_page
 
 bp = Blueprint('app', __name__, template_folder='templates', static_folder='static')
 
@@ -20,6 +20,11 @@ def view_post(cat, post):
 @bp.route('/about')
 def about():
     return read_html_page('about')
+
+
+@bp.route('/sitemap.xml')
+def sitemap():
+    return read_sitemap_page()
 
 
 @bp.errorhandler(404)
