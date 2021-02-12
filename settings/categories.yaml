@@ -1,10 +1,10 @@
 php:
   name: "PHP"
-  description: "Everything about Python"
+  description: "Everything about PHP"
 
 laravel:
   name: "Laravel"
-  description: "Everything about Python"
+  description: "Everything about Laravel"
 
 python:
   name: "Python"
@@ -16,9 +16,12 @@ docker:
 
 software-development:
   name: "Software Development"
-  description: "Everything about Docker"
+  description: "Everything about Software Development"
 
 elasticsearch:
   name: "Elasticsearch"
-  description: "Everything about Docker"
+  description: "Everything about Elasticsearch"
 
+javascript:
+  name: "JavaScript"
+  description: "Everything about JavaScript"
