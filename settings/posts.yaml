@@ -135,3 +135,9 @@ eloquent-performance-faster-LIKE-searching:
   description: "Learn how to LIKE operator could affect your seaching performance"
   category: "laravel"
   published_at: "19 September, 2020"
+
+anonymous-functions-vs-arrow-functions-in-javascript:
+  title: "Anonymous functions VS arrow functions in JavaScript"
+  description: "Learn the differences between anonymous functions and arrow functions"
+  category: "javascript"
+  published_at: "14 February, 2021"
