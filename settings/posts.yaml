@@ -141,3 +141,9 @@ anonymous-functions-vs-arrow-functions-in-javascript:
   description: "Learn the differences between anonymous functions and arrow functions"
   category: "javascript"
   published_at: "14 February, 2021"
+
+use-php-8-attributes-in-event-subscribers:
+  title: "PHP 8 Attributes in Laravel Event Subscribers"
+  description: "Learn How to Use PHP 8 Attributes in Event Subscribers"
+  category: "laravel"
+  published_at: "21 February, 2021"
