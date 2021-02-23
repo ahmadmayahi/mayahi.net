@@ -8,6 +8,7 @@ In this post, I will explain the tagging by looking at a real-world example, so 
 
 ## Scanning a file using different OCRs
 In one of my side projects, I used the following OCR systems to scan the uploaded document:
+
 - Google Vision.
 - Amazon Textract.
 - Tesseract.
