@@ -9,132 +9,142 @@
 
 <url>
   <loc>https://mayahi.net/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://mayahi.net/about</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mayahi.net/laravel/laravel-tagging-explained/</loc>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mayahi.net/laravel/use-php-8-attributes-in-event-subscribers/</loc>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/javascript/anonymous-functions-vs-arrow-functions-in-javascript/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/laravel/eloquent-performance-faster-LIKE-searching/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/laravel/eloquent-performance-multiple-counting-using-one-select/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/laravel/eloquent-performance-reusable-relationships/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/laravel/eloquent-performance-fake-relationships/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/laravel/eloquent-performance-subqueries/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/laravel/eloquent-performance-eager-loading/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/laravel/eloquent-performance-avoid-select-star/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/laravel/eloquent-performance-tips/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/php/ternary-operator-elvis-operator-null-coalescing-operator-nullsafe-operator/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/php/doubly-linked-list-stacks-and-queues-in-php/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/elasticsearch/introduction-to-elasticsearch/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/python/deploying-python-web-applications/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/php/building-infinite-unordered-html-list-using-spl/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/php/inspecting-filesystem-using-spl/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/php/late-static-binding-explained/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/laravel/jwt-with-laravel/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/php/parsing-csv-in-php-the-easiest-way/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/laravel/queues-in-laravel-building-a-video-downloader-website/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/software-development/it-is-complicated/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/python/immutable-vs-mutable-objects-in-python/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/python/all-about-strings-in-python3/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/docker/how-docker-works/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mayahi.net/docker/how-to-backup-docker-swarm/</loc>
-  <lastmod>2021-02-14T15:56:46+00:00</lastmod>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
