@@ -4,7 +4,7 @@ For example, you could group `CpuReport`, `MemoryReport`, and `DiskReport` under
 
 But that’s still vague for many developers.
 
-In this post, I will explain the tagging by looking discovering a real-world example, so let’s get started.
+In this post, I will explain the tagging by looking at a real-world example, so let’s get started.
 
 ## Scanning a file using different OCRs
 In one of my side projects, I used the following OCR systems to scan the uploaded document:
