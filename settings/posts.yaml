@@ -147,3 +147,9 @@ use-php-8-attributes-in-event-subscribers:
   description: "Learn How to Use PHP 8 Attributes in Event Subscribers"
   category: "laravel"
   published_at: "21 February, 2021"
+
+laravel-tagging-explained:
+  title: "Laravel Tagging Explained"
+  description: "What is tagging? And is it used in real world?"
+  category: "laravel"
+  published_at: "23 February, 2021"
