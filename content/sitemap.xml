@@ -18,6 +18,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://mayahi.net/laravel/bind-vs-extend-in-laravel-service-container/</loc>
+  <lastmod>2021-02-23T17:22:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://mayahi.net/laravel/laravel-tagging-explained/</loc>
   <lastmod>2021-02-23T17:22:44+00:00</lastmod>
   <priority>0.80</priority>
