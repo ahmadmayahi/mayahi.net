@@ -6,19 +6,19 @@ how-to-backup-docker-swarm:
 
 how-docker-works:
     title: "How Docker works"
-    description: "Learn how Docker works internally"
+    description: "Learn how Docker works internally."
     category: "docker"
     published_at: "18 June, 2018"
 
 all-about-strings-in-python3:
     title: "All about strings in Python3"
-    description: "Python string methods explained"
+    description: "Python string methods explained."
     category: "python"
     published_at: "14 April, 2019"
 
 immutable-vs-mutable-objects-in-python:
   title: "Immutable vs Mutable Objects in Python"
-  description: "Learn the differences between mutable and immutable objects in Python"
+  description: "Learn the differences between mutable and immutable objects in Python."
   category: "python"
   published_at: "17 April, 2019"
 
@@ -30,19 +30,19 @@ it-is-complicated:
 
 queues-in-laravel-building-a-video-downloader-website:
   title: "Queues in Laravel: Building a video downloader website"
-  description: "Learn how to use queus to build up a video downloader website using the youtube-dl library."
+  description: "Learn how to use queues to build up a video downloader website using the youtube-dl library."
   category: "laravel"
   published_at: "6 March, 2020"
 
 jwt-with-laravel:
   title: "JWT with Laravel"
-  description: "Learn how to generate JWT without any composer libraires in Laravel."
+  description: "Learn how to generate JWT without any composer libraries in Laravel."
   category: "laravel"
   published_at: "17 March, 2020"
 
 parsing-csv-in-php-the-easiest-way:
   title: "Parsing CSV in PHP, the easiest way"
-  description: "Learn how to parse CSV files in a very easy way."
+  description: "I will show you the easiest way to parse CSV files in PHP."
   category: "php"
   published_at: "17 March, 2020"
 
@@ -54,7 +54,7 @@ late-static-binding-explained:
 
 inspecting-filesystem-using-spl:
   title: "Inspecting Filesystem Using SPL"
-  description: "Learn how to use the SPL library to iterate over the filesystem"
+  description: "Learn how to use the SPL library to iterate over the filesystem."
   category: "php"
   published_at: "31 March, 2020"
 
@@ -153,3 +153,9 @@ laravel-tagging-explained:
   description: "What is tagging? And is it used in real world?"
   category: "laravel"
   published_at: "23 February, 2021"
+
+bind-vs-extend-in-laravel-service-container:
+  title: "bind vs extend in Laravel Service Container"
+  description: "Do you know the differences between bind and extend?"
+  category: "laravel"
+  published_at: "7 March, 2021"
