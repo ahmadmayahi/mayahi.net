@@ -22,7 +22,7 @@ Let’s have a look at the following relationship:
 ```php
 public function tags(): BelongsToMany
 {
-		return $this->belongsToMany(Tag::class);
+    return $this->belongsToMany(Tag::class);
 }
 ```
 
