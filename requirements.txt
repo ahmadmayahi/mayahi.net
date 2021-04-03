@@ -2,10 +2,10 @@ click==7.1.2
 Flask==1.1.2
 htmlmin==0.1.12
 itsdangerous==1.1.0
-Jinja2==2.11.2
-Markdown==3.2.2
+Jinja2==2.11.3
+Markdown==3.3.4
 MarkupSafe==1.1.1
-pymdown-extensions==8.0
-PyYAML==5.3.1
+pymdown-extensions==8.1.1
+PyYAML==5.4.1
 urllib3==1.25.10
 Werkzeug==1.0.1
