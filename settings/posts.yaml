@@ -159,3 +159,9 @@ bind-vs-extend-in-laravel-service-container:
   description: "Do you know the differences between bind and extend?"
   category: "laravel"
   published_at: "7 March, 2021"
+
+observe-pivot-tables-in-laravel:
+  title: "Observe pivot tables in Laravel"
+  description: "Learn how to observe pivot tables in Laravel"
+  category: "laravel"
+  published_at: "3 April, 2021"
