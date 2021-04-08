@@ -4,11 +4,11 @@ After a bit of research, I found some composer packages, but I was thinking why 
 
 To be honest, I’m not a big fan of using composer packages for every single problem I encounter.
 
-Jwt provides an official PHP support via the firebase/php-jwt composer library which does all the heavy lifting (encoding/decoding).
+Jwt provides an official PHP support via the `firebase/php-jwt` composer library which does all the heavy lifting (encoding/decoding).
 
-> If you like/want to use composer packages then this post is not for you, since I don’t use any other packages rather than the firebase/php-jwt.
+> If you like/want to use composer packages then this post is not for you, since I don’t use any other packages rather than the `firebase/php-jwt`.
 
-I will be using Laravel 7 as well as SQLite database, so, you may need to create a new Laravel project:
+I will be using Laravel 8 as well as SQLite database, so, you may need to create a new Laravel project:
 
 ```bash
 laravel new jwt
@@ -29,9 +29,9 @@ sqlite3 database.sqlite "create table t(id int); drop table t;"
 
 SQLite doesn’t allow us to create empty databases, therefore I created a new table and dropped it at the same time to have an empty database.
 
-Update your .env and set the DATABASE_CONNECTION to sqlite.
+Update your `.env` and set the `DATABASE_CONNECTION` to sqlite.
 
-We do need some users for testing, so, open up the database/seeds/DatabaseSeeder.php and add the following line:
+We do need some users for testing, so, open up the `database/seeds/DatabaseSeeder.php` and add the following line:
 
 ```php
 factory(App\User::class, 10)->create();
@@ -50,7 +50,7 @@ Since we are creating a new authentication mechanism, we need to create a new gu
 
 Laravel provides two ways of creating guards, the easiest one is by using closures, so let’s see try it out.
 
-Open up your AuthServiceProvider and add the following code inside the boot method:
+Open up your `AuthServiceProvider` and add the following code inside the boot method:
 
 ```php
  \Auth::viaRequest('email', function ($request) {
@@ -58,9 +58,9 @@ Open up your AuthServiceProvider and add the following code inside the boot meth
  });
 ```
 
-The guard has to return a User model, if the user couldn’t be found, then a value of null has to be returned.
+The guard has to return a `User` model, if the user couldn’t be found, then a value of null has to be returned.
 
-Open up the config/auth.php file and add the newly added guard into the guards section:
+Open up the `config/auth.php` file and add the newly added guard into the guards section:
 
 ```php
 'guards' => 
@@ -73,7 +73,7 @@ Open up the config/auth.php file and add the newly added guard into the guards s
 
 Let’s see how do we use it.
 
-Open up your routes/web.php file and add the following code:
+Open up your `routes/web.php` file and add the following code:
 
 ```php
 Route::get('/dashboard', function() {
@@ -81,7 +81,7 @@ Route::get('/dashboard', function() {
 })->middleware('auth:email');
 ```
 
-By using the middleware('auth:email') we are telling Laravel to use the email guard, easy peasy.
+By using the `middleware('auth:email')` we are telling Laravel to use the `email` guard, easy peasy.
 
 Let’s try it out by running Laravel’s internal server:
 
@@ -91,7 +91,7 @@ php artisan serve
 
 Try to access the dashboard route, and you’ll see that you’ve being redirected to the login page, that is because you didn’t provide a valid email address.
 
-Let’s try it again, by providing a valid email address.
+Let’s try it again, but this time we'll provide a valid email address.
 
 Get an email address from the database:
 
@@ -105,14 +105,14 @@ Copy the returned email address, and then try to access the dashboard route with
 http://127.0.0.1:8000/test?email=cmarquardt@example.org
 ```
 
-You should be able to see the content, which is Hello {user.name}.
+You should be able to see the content, which is `Hello {user.name}`.
 
-The other way of adding a new guard is by using the Auth::extend method; by using this method, we should return an object that implements the Illuminate\Contracts\Guard interface.
+The other way of adding a new guard is by using the Auth::extend method; by using this method, we should return an object that implements the `Illuminate\Contracts\Guard interface`.
 
 You may take a look at the guard interface to see what kind of methods has to be implemented.
 
 ## What is JSON Web Token?
-In its simplest terms, JSON Web Token (Jwt) is a base64-encoded JSON that is encrypted by one of the supported algorithms such as HS256, RS256, etc… This means that nobody can tamper with the data without having the decryption key.
+In its simplest terms, `JSON Web Token` (`Jwt`) is a base64-encoded JSON that is encrypted by one of the supported algorithms such as `HS256`, `RS256`, etc... This means that nobody can tamper with the data without having the decryption key.
 
 While Jwt can be used for anything, it is mostly used as an authentication/authorization mechanism.
 
@@ -126,13 +126,13 @@ Before I answer this question, let’s inspect the Jwt.
 
 Jwt consists of three main parts:
 
-- Header: specifies the encrypted algorithm such as HS256, RS256, etc…
-- Payload: the actual data that we need to exchange, such as the user id, password, etc…
-- Signature: is created by combining the header, payload and the secret key.
+- **Header**: specifies the encrypted algorithm such as HS256, RS256, etc…
+- **Payload**: the actual data that we need to exchange, such as the user id, password, etc…
+- **Signature**: is created by combining the header, payload and the secret key.
 
 Sounds confusing? so, Let’s break it down.
 
-Header: is the easiest part, which specifies the algorithm such as HS256 as well as the type (which is always JWT):
+Header: is the easiest part, which specifies the algorithm such as `HS256` as well as the type (which is always JWT):
 ```json
 {
   "alg": "HS256",
@@ -140,10 +140,10 @@ Header: is the easiest part, which specifies the algorithm such as HS256 as well
 }
 ```
 
-Payload: contains the claims. The claims describe the entity (typically, the user), claims could be divided into three parts, only two parts of them are needed:
+Payload: contains the claims. The `claims` describes the entity (typically, the user), claims could be divided into three parts, only two parts of them are needed:
 
-- Registered Claims: a set of predefined claims which are not mandatory but recommended, such as the expiration time (exp) and some other claims.
-- Private claims: these are custom claims created to share information, such as the user id, user type, etc…
+- **Registered Claims**: a set of predefined claims which are not mandatory but recommended, such as the expiration time (`exp`) and some other claims.
+- **Private claims**: these are custom claims created to share information, such as the user id, user type, etc...
 
 ```json
 {
@@ -153,7 +153,7 @@ Payload: contains the claims. The claims describe the entity (typically, the use
 }
 ```
 
-Signature: the signature created by taking the encoded header, the encoded payload, and sign them by the algorithm specified in the header (as well as the secret key).
+**Signature**: is the signature created by taking the encoded header, the encoded payload, and sign them by the algorithm specified in the header (as well as the secret key).
 
 ```text
 HMACSHA256(
@@ -162,11 +162,11 @@ HMACSHA256(
   secret)
 ```
 
-> The sub claim normally used to store the user id.
+> The sub `claim` normally used to store the user id.
 
 ## Jwt Configurations
 
-The very first thing you should be doing is installing the firebase/php-jwt package:
+The very first thing you should be doing is installing the `firebase/php-jwt` package:
 
 ```bash
 composer require firebase/php-jwt
@@ -202,24 +202,24 @@ return [
 ];
 ```
 
-> As you can see, I use the RS256 algorithm, if you want to use a different one, then consider looking at the supported algorithms.
+> As you can see, I use the `RS256` algorithm, if you want to use a different one, then consider looking at the supported algorithms.
 
 > If you want to know more about the leeway option, then consider reading the nbf claim. I think one minute is sufficient for clock skew.
 
 To make it simple and straightforward, I will start by creating three classes:
 
-- JwtBuilder: this class will be responsible for creating the token by using some convenient methods.
-- JwtParser: reads the given token, and decrypts it.
-- JwtGuard: this is the Laravel guard which is used to authenticate the user via the token.
-- JwtAuth: authenticates the user.
+- `JwtBuilder`: this class will be responsible for creating the token by using some convenient methods.
+- `JwtParser`: reads the given token, and decrypts it.
+- `JwtGuard`: this is the Laravel guard which is used to authenticate the user via the token.
+- `JwtAuth`: authenticates the user.
 
 ## JwtBuilder
 
-JwtBuilder is a wrapper around the claims, it provides some convenient methods, for example, calling relatedTo is more readable than aud.
+`JwtBuilder` is a wrapper around the claims, it provides some convenient methods, for example, calling relatedTo is more readable than aud.
 
-I also added the claims descriptions for each method.
+I also added the `claims` descriptions for each method.
 
-Create a new class app/Services/Jwt/JwtBuilder.php:
+Create a new class `app/Services/Jwt/JwtBuilder.php`:
 
 ```php
 <?php
@@ -377,9 +377,9 @@ class JwtBuilder
 ```
 
 ## JwtParser
-JwtParser takes a token, decodes it and saves it into the $claims property, then we can access these claims by some readable methods such as getRelatedTo.
+The `JwtParser` takes a token, decodes it and saves it into the `$claims` property, then we can access these claims by some readable methods such as `getRelatedTo`.
 
-Create a new class app/Services/Jwt/JwtParser.php:
+Create a new class `app/Services/Jwt/JwtParser.php`:
 
 ```php
 <?php
@@ -471,9 +471,9 @@ class JwtParser
 ## JwtGuard
 The guard contains the actual Jwt authentication process, what it does simply is reading the bear-token, decodes it, and loads the appropriate user by inspecting the sub claim.
 
-The sub claim contains the user id, if you take a look at the JwtAuth you’ll see that the user id will be stored in the sub (releatedTo method).
+The sub `claim` contains the user id, if you take a look at the `JwtAuth` you’ll see that the user id will be stored in the sub (releatedTo method).
 
-Since the token is encrypted by RSA256, only we have the ability to decode it by the private key, so, we’re 100% sure that we can rely on the sub value.
+Since the token is encrypted by `RSA256`, only we have the ability to decode it by the private key, so, we’re 100% sure that we can rely on the sub value.
 
 ```php
 <?php
@@ -582,9 +582,9 @@ class JwtGuard implements Guard
 ```
 
 ## JwtAuth
-This class is used to generate the Jwt upon the successful authentication, this means that the authenticateAndReturnJwtToken method has to be called within a controller
+This class is used to generate the Jwt upon the successful authentication, this means that the `authenticateAndReturnJwtToken` method has to be called within a controller
 
-Create a new class app/Services/Jwt/JwtAuth.php:
+Create a new class `app/Services/Jwt/JwtAuth.php`:
 
 ```php
 <?php
@@ -629,9 +629,9 @@ class JwtAuth
 ```
 
 ## Putting all together
-Let’s it put all together and start by creating the AuthController.
+Let’s it put all together and start by creating the `AuthController`.
 
-The AuthController is responsible for authenticating the user by using the default guard (web), if it succeeds, then a new token will be sent back to the user.
+The `AuthController` is responsible for authenticating the user by using the default guard (`web`), if it succeeds, then a new token will be sent back to the user.
 
 So, let’s get started:
 
@@ -732,6 +732,6 @@ If the authentication succeed, then you’ll see the authenticated user informat
 
 JSON Web Token is a powerful yet simple authentication mechanism, you can also use it to exchange some data rather than the authentication.
 
-If you have a SPA/mobile app then you might need to look at the AirLock package.
+If you have a SPA/mobile app then you might need to look at the Sanctum package.
 
-The airLock is a new package created by the Taylor Otwell, it’s aim is to provide a simple API authentication for SPA/mobile etc
+Sanctum is a first party Laravel package created by the Taylor Otwell, it’s aim is to provide a simple API authentication for SPA/mobile etc
