@@ -166,7 +166,7 @@ def read_from_manifest(key):
 
 def get_file_checksum(file_path):
     md5_hash = hashlib.md5()
-    with open(file_path, "rb", encoding="utf-8") as file:
+    with open(file_path, "rb") as file:
         content = file.read()
         md5_hash.update(content)
         return md5_hash.hexdigest()
