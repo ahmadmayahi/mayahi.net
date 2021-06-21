@@ -125,12 +125,12 @@ def read_post(category, post):
 
 
 def read_html_page(page):
-    with open(abs_path('var', 'pages', page + '.html', encoding="utf-8"), 'r') as index:
+    with open(abs_path('var', 'pages', page + '.html'), 'r', encoding="utf-8") as index:
         return index.read()
 
 
 def read_sitemap_page():
-    with open(abs_path('content', 'sitemap.xml', encoding="utf-8"), 'r') as file:
+    with open(abs_path('content', 'sitemap.xml'), 'r', encoding="utf-8") as file:
         return file.read()
 
 
