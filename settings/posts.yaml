@@ -165,3 +165,9 @@ observe-pivot-tables-in-laravel:
   description: "Learn how to observe pivot tables in Laravel"
   category: "laravel"
   published_at: "3 April, 2021"
+
+make-refresh-database-much-faster:
+  title: "Make RefreshDatabase trait much faster"
+  description: "Learn how to make the RefreshDatabase trait much faster using the checksum"
+  category: "laravel"
+  published_at: "26 June, 2021"
