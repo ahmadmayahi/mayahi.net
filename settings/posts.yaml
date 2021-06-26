@@ -166,7 +166,7 @@ observe-pivot-tables-in-laravel:
   category: "laravel"
   published_at: "3 April, 2021"
 
-make-refresh-database-much-faster:
+make-refresh-database-trait-much-faster:
   title: "Make RefreshDatabase trait much faster"
   description: "Learn how to make the RefreshDatabase trait much faster using the checksum"
   category: "laravel"
