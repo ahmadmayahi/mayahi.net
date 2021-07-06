@@ -129,8 +129,6 @@ That’s it, let’s get started.
 Create a new `trait` named `RefreshTestDatabase` in `/tests` folder.
 
 ```php
-<?php
-
 namespace Tests;
 
 use Illuminate\Contracts\Console\Kernel;
