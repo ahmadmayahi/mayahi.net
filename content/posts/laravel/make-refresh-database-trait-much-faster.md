@@ -129,8 +129,6 @@ That’s it, let’s get started.
 Create a new `trait` named `RefreshTestDatabase` in `/tests` folder.
 
 ```php
-<?php
-
 namespace Tests;
 
 use Illuminate\Contracts\Console\Kernel;
@@ -167,13 +165,20 @@ trait RefreshTestDatabase
     {
         $files = Finder::create()
             ->files()
-            ->in(database_path('migrations'))
+            ->exclude([
+                'factories',
+                'seeders',
+            ])
+            ->in(database_path())
             ->ignoreDotFiles(true)
             ->ignoreVCS(true)
             ->getIterator();
 
-        return collect(array_keys(iterator_to_array($files)))
-            ->reduce(fn($carry, $file) => md5_file($file));
+        $files = array_keys(iterator_to_array($files));
+
+        $checksum = collect($files)->map(fn($file) => md5_file($file))->implode('');
+
+        return md5($checksum);
     }
 
     protected function checksumFilePath(): string
