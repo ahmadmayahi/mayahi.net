@@ -25,3 +25,7 @@ elasticsearch:
 javascript:
   name: "JavaScript"
   description: "Everything about JavaScript"
+
+linux:
+  name: "Linux"
+  description: "Linux"
