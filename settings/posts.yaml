@@ -171,3 +171,9 @@ make-refresh-database-trait-much-faster:
   description: "Learn how to make the RefreshDatabase trait much faster using the checksum"
   category: "laravel"
   published_at: "26 June, 2021"
+
+accept-more-http-requests-by-increasing-the-incoming-connections:
+  title: "Accept more HTTP requests by increasing the incoming connections"
+  description: "Learn how to accept more HTTP requests by increasing the incoming connections on your server"
+  category: "linux"
+  published_at: "9 July, 2021"
