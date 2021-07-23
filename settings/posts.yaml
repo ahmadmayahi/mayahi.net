@@ -183,3 +183,9 @@ secure-your-servers-using-iptables:
   description: "Lean how to use iptables to secure your servers"
   category: "linux"
   published_at: "23 July, 2021"
+
+test-doubles-in-php-part-1-dummies:
+  title: "Test doubles in PHP - Part 1: Dummies"
+  description: "First post of test doubles in PHP series"
+  category: "php"
+  published_at: "23 July, 2021"
