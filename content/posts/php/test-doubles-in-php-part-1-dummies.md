@@ -1,5 +1,3 @@
-# Test Doubles in PHP- Part 1: Dummies
-#php
 Test doubles are one of the essential pillars of testing.
 
 In this post and the next upcoming ones, I will guide you through all the five test doubles and explain each one in detail, so let's get started with the easiest one, the `Dummy` test double.
