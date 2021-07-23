@@ -177,3 +177,9 @@ accept-more-http-requests-by-increasing-the-incoming-connections:
   description: "Learn how to accept more HTTP requests by increasing the incoming connections on your server"
   category: "linux"
   published_at: "9 July, 2021"
+
+secure-your-servers-using-iptables:
+  title: "Secure your servers using iptables"
+  description: "Lean how to use iptables to secure your servers"
+  category: "linux"
+  published_at: "23 July, 2021"
