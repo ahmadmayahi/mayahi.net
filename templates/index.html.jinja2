@@ -12,6 +12,9 @@
 			<div class="flex-1 px-2">
 				<a href="{{ url_for('app.view_post', cat=post.get('category'), post=name) }}">
                     <h2 class="text-base font-bold text-base md:text-2xl leading-9 mb-2">{{ post.get('title') }}</h2></a>
+				<p class="text-gray-600 text-xs md:text-base">
+                    {{ post.get('description') }}
+                </p>
 			</div>
 		</div>
         <div class="mb-4 mx-4"></div>
