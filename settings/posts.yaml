@@ -191,7 +191,7 @@ introduction-to-test-doubles-in-php:
   published_at: "26 August, 2021"
 
 test-doubles-in-php-dummies-and-stubs:
-  title: "Test doubles in PHP - Dummies, Stubs and Mocks"
-  description: "Learn the differences between dummies, stubs and mocks"
+  title: "Test doubles in PHP - Dummies and Stubs"
+  description: "Learn the differences between dummies and stubs"
   category: "php"
   published_at: "27 August, 2021"
