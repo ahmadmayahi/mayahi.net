@@ -199,6 +199,6 @@ test-doubles-in-php-dummies-and-stubs:
 pessimistic-locking-in-laravel:
   title: "Pessimistic Locking in Laravel"
   description: "What is the pessimistic locking?"
-  category: "php"
+  category: "laravel"
   published_at: "28 August, 2021"
 
