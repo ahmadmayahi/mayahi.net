@@ -195,3 +195,10 @@ test-doubles-in-php-dummies-and-stubs:
   description: "Learn the differences between dummies and stubs"
   category: "php"
   published_at: "27 August, 2021"
+
+pessimistic-locking-in-laravel:
+  title: "Pessimistic Locking in Laravel"
+  description: "What is the pessimistic locking?"
+  category: "php"
+  published_at: "28 August, 2021"
+
