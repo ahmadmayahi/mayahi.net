@@ -202,3 +202,8 @@ pessimistic-locking-in-laravel:
   category: "laravel"
   published_at: "28 August, 2021"
 
+access-mysql-without-password:
+  title: "Access MySQL Without Password"
+  description: "Learn how to access MySQL Server without password"
+  category: "mysql"
+  published_at: "28 August, 2021"
