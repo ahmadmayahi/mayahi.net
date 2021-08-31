@@ -207,3 +207,9 @@ access-mysql-without-password:
   description: "Learn how to access MySQL Server without password"
   category: "mysql"
   published_at: "28 August, 2021"
+
+backup-and-restore-mysql-databases-in-an-efficient-way:
+  title: "Backup and restore MySQL databases in an efficient way"
+  description: "Learn how to backup and restore your MySQL databases in an efficient way"
+  category: "mysql"
+  published_at: "31 August, 2021"
