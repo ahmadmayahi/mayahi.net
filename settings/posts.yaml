@@ -195,3 +195,21 @@ test-doubles-in-php-dummies-and-stubs:
   description: "Learn the differences between dummies and stubs"
   category: "php"
   published_at: "27 August, 2021"
+
+pessimistic-locking-in-laravel:
+  title: "Pessimistic Locking in Laravel"
+  description: "What is the pessimistic locking?"
+  category: "laravel"
+  published_at: "28 August, 2021"
+
+access-mysql-without-password:
+  title: "Access MySQL Without Password"
+  description: "Learn how to access MySQL Server without password"
+  category: "mysql"
+  published_at: "28 August, 2021"
+
+backup-and-restore-mysql-databases-in-an-efficient-way:
+  title: "Backup and restore MySQL databases in an efficient way"
+  description: "Learn how to backup and restore your MySQL databases in an efficient way"
+  category: "mysql"
+  published_at: "31 August, 2021"
