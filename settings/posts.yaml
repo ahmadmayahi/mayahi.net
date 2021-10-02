@@ -213,3 +213,10 @@ backup-and-restore-mysql-databases-in-an-efficient-way:
   description: "Learn how to backup and restore your MySQL databases in an efficient way"
   category: "mysql"
   published_at: "31 August, 2021"
+
+temporal-coupling:
+  title: "Temporal Coupling"
+  description: "What is Temporal Coupling? And how to fix it?"
+  category: "php"
+  published_at: "2 Oct, 2021"
+
