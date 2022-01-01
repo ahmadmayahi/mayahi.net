@@ -78,33 +78,53 @@ $person = new Person();
 echo $person->name ?? 'No name'; // No name
 ```
 
-It works well, but how about the undefined class methods?
-```php
-class Person { }
+It works well, but how about class properties?
 
-$person = new Person();
-echo $person->getName() ?? 'No name';
+Let's have a look at the following example:
+
+```php
+interface Country { }
+
+class Iraq implements Country 
+{
+    public string $name = 'Iraq';
+}
+	
+class Person 
+{
+    public ?Country $country = null;
+    
+    public function __construct(?Country $country) {
+        $this->country = $country;
+    }
+}
+	
+$person = new Person(nulll);
+
+echo 'I am are from: ' . $person->country->name;
 ```
 
 ```text
-PHP Fatal error:  Uncaught Error: Call to undefined method Person::getName()
+PHP Warning:  Attempt to read property "name" on null in ...
 ```
 
-As you see, it's not possible to use this operator on an undefined methods, but you can easily fix it by using the `method_exists` function before the operator as follows:
+As you might have noticed, the `country` property on the `Person` class cen accept either a `Country` interface or a `null` value, but always expect it to have a `Country` object.
+
+Let's see how to fix it in PHP < 8.0:
+
 ```php
-class Person { }
-
-$person = new Person();
-
-if (method_exists($person, 'getName')) {
-	echo $person->getName() ?? 'No name';
+if ($country = $person->country) {
+    echo 'I am from '. $country->name;
 }
 ```
 
 ## Null safe operator
 This operator was introduced in PHP 8.0.
 
-Null safe operator (`?->`) doesn't throw an exception if the method does't exists: 
+The null safe operator (`?->`) doesn't throw an exception if we try to access the `name` property on `null`:
+
 ```php
-echo $person?->getName();
+echo $person->country?->name;
 ```
+
+Basically, it's telling PHP to get the `name` propery if the object does exist, otherwise it should neglect it.
