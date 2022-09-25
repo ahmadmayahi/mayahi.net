@@ -220,9 +220,14 @@ temporal-coupling:
   category: "php"
   published_at: "2 October, 2021"
 
-
 how-to-use-google-vision-in-php-efficiently:
   title: "How to use Google Vision in PHP efficiently"
   description: "Introducing an elegant wrapper for Google Vision API"
   category: "php"
   published_at: "1 January, 2022"
+
+how-to-modify-http-responses-in-laravel:
+  title: "How to modify http responses in Laravel"
+  description: "Learn how to control and modify http responses in Laravel"
+  category: "laravel"
+  published_at: "23 September, 2022"
