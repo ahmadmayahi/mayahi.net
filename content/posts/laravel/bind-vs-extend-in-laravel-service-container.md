@@ -65,7 +65,7 @@ That worked perfectly.
 
 Let’s try to add `isAdmin` method in the `Illuminate\Auth\AuthManager`. This method checks the `is_admin` column on the `users` table; if it sets to `1`, the user is an admin; otherwise, she’s not.
 
-As its name implies, the `AuthManager` has access to all the authentication features, such as `login`, `logout`, `loginUsindId`, `user`, etc…
+As its name implies, the `AuthManager` has access to all the authentication features, such as `login`, `logout`, `loginUsingId`, `user`, etc…
 
 You can access the `AuthManager` in different ways:
 ```php
