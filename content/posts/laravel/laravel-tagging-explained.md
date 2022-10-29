@@ -90,7 +90,7 @@ class Recognizer
 ```
 
 ## Tagging the OCR classes
-Instead of using dependency injection by type-hinting the OCR classes and then calling the `recognize method on each one of them, I can easily create a group that contains the supported OCR as follows:
+Instead of using dependency injection by type-hinting the OCR classes and then calling the `recognize` method on each one of them, I can easily create a group that contains the supported OCR as follows:
 ```php
 class AppServiceProvider
 {
@@ -118,7 +118,7 @@ $this->app->bind(Recognizer::class, function() {
 
 Since the `$this->app->tagged` returns an `Iterator`. I can use the array spread operator `…` to inject all the tagged dependencies.
 
-The `...` operator spreads the array elements and pass them individually to the `Recognizer` object.
+The `...` operator spreads the array elements and passes them individually to the `Recognizer` object.
 
 Let’s modify the `Recoginzer` class to have the new changes:
 ```php
