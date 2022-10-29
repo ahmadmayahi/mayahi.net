@@ -202,7 +202,7 @@ The queue driver can be set by modifying the QUEUE_CONNECTION in .env file to th
 
 You’re free to use whatever driver that suits you, for this post, I’ll stick with the database driver, so, open up your .env file and change QUEUE_CONNECTION to database.
 
-In order to use the database driver, you need a table that holds the jobs, this table can be easily created by running php artisan queue:table followed by php artisan migrate.
+In order to use the database driver, you need a table that holds the jobs, this table can be easily created by running `php artisan queue:table` followed by `php artisan migrate`.
 
 ## Dispatching Jobs
 
