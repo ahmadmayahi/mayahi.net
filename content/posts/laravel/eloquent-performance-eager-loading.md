@@ -68,7 +68,7 @@ You may also eager-load multiple relationships:
 $users = User::with(['company', 'posts'])->paginate();
 ```
 
-Nested eager loading is supported as well using the do notation.
+Nested eager loading is supported as well using the dot notation.
 
 Let's say that you want to eager-load the `App\Models\Country` in the `App\Models\Company` from the `App\Models\User`:
 ```php
