@@ -181,7 +181,7 @@ class ResolveListeners
 
 Let’s see how does this class work:
 
-1. The `$subscriberReflectionClass->getMethods()` iterates over the listener's methods for the given subscriber class; In our case it gets `handleUserLogin` and `handleUserLoogout` methods from the `UserEventSubscriber`.
+1. The `$subscriberReflectionClass->getMethods()` iterates over the listener's methods for the given subscriber class; In our case it gets `handleUserLogin` and `handleUserLogout` methods from the `UserEventSubscriber`.
 2. The `$listenerMethodAttributes` gets the `ListensTo::class` attributes for the given listener.
 3. By iterating over the `$listenerMethodAttributes` we can easily instantiate the `ListensTo` attribute class by using the `$listenerMethodAttribute->newInstance()`. This will return an instance of `App\Attributes\ListensTo` so we can read the event’s name.
 4. Finally, we add the event’s name and its listener to the `$listener` and we return it.
