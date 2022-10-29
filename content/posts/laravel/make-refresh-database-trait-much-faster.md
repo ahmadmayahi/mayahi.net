@@ -155,7 +155,7 @@ trait RefreshTestDatabase
 
     protected function runMigrationsIfNecessary(): void
     {
-        if (false === $this->identicalChecksum()) {
+        if (! $this->identicalChecksum() ||  ! $this->checksumExists()) {
             $this->createChecksum();
             $this->artisan('migrate:fresh');
         }
@@ -196,22 +196,14 @@ trait RefreshTestDatabase
         return file_get_contents($this->checksumFilePath());
     }
 
-    protected function isChecksumExists(): bool
+    protected function checksumExists(): bool
     {
         return file_exists($this->checksumFilePath());
     }
 
     protected function identicalChecksum(): bool
     {
-        if (false === $this->isChecksumExists()) {
-            return false;
-        }
-
-        if ($this->checksumFileContents() === $this->calculateChecksum()) {
-            return true;
-        }
-
-        return false;
+        return ($this->checksumFileContents() === $this->calculateChecksum());
     }
 }
 ```
