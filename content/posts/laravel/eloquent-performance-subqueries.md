@@ -49,16 +49,13 @@ It's better to move your subqueries into scopes, so you will have great control 
 ```php
 // App\Models\Post
 
-public function scopeWithTotalPosts()
+public function scopeWithTotalPosts($query)
 {
-    $users = User::query()
-        ->addSelect([
+    return $query->addSelect([
             'total_posts' => Post::selectRaw('COUNT(*)')
                 ->whereColumn('user_id', '=', 'users.id')
                 ->take(1)
-        ])
-        ->orderBy('total_posts', 'desc')
-        ->paginate();
+        ]);
 }
 ```
 
