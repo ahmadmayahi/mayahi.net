@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Models\Log;
 
-// The transactio won't be comitted if an exception ocurr
+// The transaction won't be comitted if an exception ocurr
 $postId = 1;
 $post = DB::transaction(function() use ($postId) {
 		$post = Post::findOrFail($postId);
