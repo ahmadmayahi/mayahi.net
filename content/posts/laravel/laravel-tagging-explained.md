@@ -124,7 +124,7 @@ Let’s modify the `Recoginzer` class to have the new changes:
 ```php
 class Recognizer
 {
-    public function __construct(App\Contracts\OCR ...$ocrs)
+    public function __construct(private App\Contracts\OCR ...$ocrs)
     {
     }
 
