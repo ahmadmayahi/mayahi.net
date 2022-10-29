@@ -59,7 +59,7 @@ mkdir storage/app/public/downloads
 php artisan storage:link
 ```
 
-We do need a few routes for c
+We do need a few routes for the controller methods.
 
 Replace the routes/web.php file with the following contents:
 
@@ -198,9 +198,9 @@ The whole idea behind queues is that you tell Laravel to run a specific job in t
 
 Laravel supports a variety of queue drivers, and these drivers can be easily configured in the app/queue.php file, Laravel supports Redis, database, Amazon SQS, Beanstalkd out of the box.
 
-The queue driver can be set by modifying the QUEUE_CONNECTION in .env file to the appropriate driver; By default the QUEUE_CONNECTION is set to sync which means no queuing.
+The queue driver can be set by modifying the `QUEUE_CONNECTION` in .env file to the appropriate driver; By default the `QUEUE_CONNECTION` is set to sync which means no queuing.
 
-You’re free to use whatever driver that suits you, for this post, I’ll stick with the database driver, so, open up your .env file and change QUEUE_CONNECTION to database.
+You’re free to use whatever driver that suits you, for this post, I’ll stick with the database driver, so, open up your .env file and change `QUEUE_CONNECTION` to database.
 
 In order to use the database driver, you need a table that holds the jobs, this table can be easily created by running php artisan queue:table followed by php artisan migrate.
 
@@ -210,7 +210,7 @@ While it is not always the case, the dispatching term refers to running a piece 
 
 You can use the dispatch helper to run any piece code asynchronously, this means that the queue will pick up your code and run it later.
 
-> “later” is not always the case, if the value of QUEUE_CONNECTION in .env file is set to sync then no jobs will be queued, and all the dispatched jobs will be run immediately, this is helpful while testing, take a look at the phpunit.xml and you’ll see that the queue is set to sync.
+> “later” is not always the case, if the value of `QUEUE_CONNECTION` in .env file is set to sync then no jobs will be queued, and all the dispatched jobs will be run immediately, this is helpful while testing, take a look at the phpunit.xml and you’ll see that the queue is set to sync.
 
 Let’s try the dispatch helper, open up your routes/web.php and add the following route:
 
