@@ -88,7 +88,7 @@ $response->fullMatchingImages;
 
 $response->partialMatchingImages;
 
-$response->bestGuessLabels;;
+$response->bestGuessLabels;
 
 $response->pagesWithMatchingImages;
 
@@ -107,7 +107,7 @@ composer require ahmadmayahi/php-google-vision
 
 You also need to create a service account through your Google Cloud account.
 
-If you're not familiar with service accounts, then you migh need to visit [Google cloud documentation](https://cloud.google.com/iam/docs/creating-managing-service-accounts).
+If you're not familiar with service accounts, then you might need to visit [Google cloud documentation](https://cloud.google.com/iam/docs/creating-managing-service-accounts).
 
 That's it.
 
